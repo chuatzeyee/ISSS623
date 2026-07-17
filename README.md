@@ -13,7 +13,7 @@ Built with React 19 + TypeScript + Tailwind CSS 4 + Vite. Deployed to GitHub Pag
 | **Topics & Glossary** | Lecture content by segment (healthcare landscape, financing & value, health data ecosystem, analytics & AI, tools) plus a searchable glossary |
 | **Debate Trainer** | The ageing debate: full argument-by-argument cases for Proposition, Opposition and Policy Jury, a memorizable stat card, delivery tactics, and an interactive rebuttal sparring drill |
 | **BRFSS Group Project** | Step-by-step playbook for the 2024 BRFSS predictive-modelling project: scope, topic options with candidate variables, roles, rubrics, deadlines |
-| **Practice Quiz** | MCQ bank with explanations covering every lecture topic, filterable by topic — built for Quiz 1 and Quiz 2 prep |
+| **Practice Quiz** | MCQ bank with explanations covering every lecture topic, filterable by topic - built for Quiz 1 and Quiz 2 prep |
 
 ## Development
 

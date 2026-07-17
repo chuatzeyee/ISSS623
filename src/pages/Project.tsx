@@ -36,7 +36,7 @@ export default function Project() {
     <div className="max-w-4xl mx-auto px-6 py-12">
       <div className="mb-8 animate-fade-in">
         <h1 className="text-3xl font-bold text-ink mb-2">BRFSS Group Project</h1>
-        <p className="text-ink-secondary">Predictive modelling using the 2024 Behavioral Risk Factor Surveillance System — 40% of your grade across proposal, presentation, final submission and peer evaluation.</p>
+        <p className="text-ink-secondary">Predictive modelling using the 2024 Behavioral Risk Factor Surveillance System - 40% of your grade across proposal, presentation, final submission and peer evaluation.</p>
       </div>
 
       <section className="mb-10">
@@ -69,7 +69,7 @@ export default function Project() {
       </section>
 
       <section className="mb-10">
-        <h2 className="font-semibold text-ink mb-3">Topic options — pick one before class if you can</h2>
+        <h2 className="font-semibold text-ink mb-3">Topic options - pick one before class if you can</h2>
         <div className="space-y-3">
           {topicOptions.map(t => (
             <div key={t.id} className="bg-surface border border-edge rounded-lg overflow-hidden">
@@ -131,7 +131,7 @@ export default function Project() {
       </section>
 
       <section className="mb-10">
-        <h2 className="font-semibold text-ink mb-3 flex items-center gap-2"><ClipboardList size={16} className="text-glow" /> Rubrics — write to these</h2>
+        <h2 className="font-semibold text-ink mb-3 flex items-center gap-2"><ClipboardList size={16} className="text-glow" /> Rubrics - write to these</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <div>
             <div className="text-sm text-ink-muted mb-2">Proposal (10%)</div>

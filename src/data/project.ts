@@ -12,17 +12,17 @@ import type {
 export const deadlines: readonly DeadlineItem[] = [
   {
     date: '2026-07-11',
-    what: 'Mini structured debate on ageing — participation counts from this date (participation assessed Weeks 1–4)',
+    what: 'Mini structured debate on ageing - participation counts from this date (participation assessed Weeks 1–4)',
     weight: '15% (participation)',
   },
   {
     date: '2026-07-18',
-    what: 'Group project proposal — max 2 pages excluding annexes: project question, public health motivation, literature context, outcome + predictors, planned models, role allocation',
+    what: 'Group project proposal - max 2 pages excluding annexes: project question, public health motivation, literature context, outcome + predictors, planned models, role allocation',
     weight: '10%',
   },
   {
     date: '2026-07-25',
-    what: 'Quiz 1 — covers healthcare landscape, health data ecosystem, and assigned readings (Aliferis & Simon ch.1 & 6, Liu et al. 2025)',
+    what: 'Quiz 1 - covers healthcare landscape, health data ecosystem, and assigned readings (Aliferis & Simon ch.1 & 6, Liu et al. 2025)',
     weight: '20%',
   },
   {
@@ -32,7 +32,7 @@ export const deadlines: readonly DeadlineItem[] = [
   },
   {
     date: '2026-08-14',
-    what: 'Final submission — report (2,500–3,500 words), reproducible notebook, slides, collaterals — plus SPOT peer evaluation form',
+    what: 'Final submission - report (2,500–3,500 words), reproducible notebook, slides, collaterals - plus SPOT peer evaluation form',
     weight: '20% (final) + 10% (peer evaluation)',
   },
 ]
@@ -41,7 +41,7 @@ export const deadlines: readonly DeadlineItem[] = [
 export const scope: readonly ScopeItem[] = [
   {
     item: 'Outcome',
-    scope: '1 primary outcome only (or a justified composite) + 1 optional secondary outcome — prevents proliferation of models',
+    scope: '1 primary outcome only (or a justified composite) + 1 optional secondary outcome - prevents proliferation of models',
   },
   {
     item: 'Predictor variables',
@@ -49,19 +49,19 @@ export const scope: readonly ScopeItem[] = [
   },
   {
     item: 'Baseline model',
-    scope: '1 regression model — logistic regression recommended; use linear regression only if the outcome is continuous',
+    scope: '1 regression model - logistic regression recommended; use linear regression only if the outcome is continuous',
   },
   {
     item: 'Machine-learning models',
-    scope: 'Minimum 2 models in addition to the baseline — decision tree (interpretability), random forest or gradient boosting (stronger nonlinear); SVM optional; neural nets not recommended without prior experience',
+    scope: 'Minimum 2 models in addition to the baseline - decision tree (interpretability), random forest or gradient boosting (stronger nonlinear); SVM optional; neural nets not recommended without prior experience',
   },
   {
     item: 'Dataset year',
-    scope: '2024 BRFSS only (unless there are documented reasons to explore other years) — 457,670 respondents, 297 columns',
+    scope: '2024 BRFSS only (unless there are documented reasons to explore other years) - 457,670 respondents, 297 columns',
   },
   {
     item: 'Survey weights',
-    scope: 'NOT used (_LLCPWT ignored) — interpret results as findings from your analytic sample, NOT nationally representative estimates; a limitation statement is required',
+    scope: 'NOT used (_LLCPWT ignored) - interpret results as findings from your analytic sample, NOT nationally representative estimates; a limitation statement is required',
   },
 ]
 
@@ -91,7 +91,7 @@ export const topicOptions: readonly BrfssTopicOption[] = [
       'PRIMINSR',
     ],
     literature:
-      'Jiang, Hesser & Williams (2006, Health Qual Life Outcomes 4:14) — Rhode Island 2002 BRFSS linking HRQOL indicators (fair/poor health, physically/mentally unhealthy days, activity limitation) to demographics, health behaviours and risks; see also Moriarty, Zack & Kobau (2003) on the CDC Healthy Days measures.',
+      'Jiang, Hesser & Williams (2006, Health Qual Life Outcomes 4:14) - Rhode Island 2002 BRFSS linking HRQOL indicators (fair/poor health, physically/mentally unhealthy days, activity limitation) to demographics, health behaviours and risks; see also Moriarty, Zack & Kobau (2003) on the CDC Healthy Days measures.',
     whyItMatters:
       'Health-related quality of life is the CDC’s core population health surveillance construct; predicting high burden lets groups combine predictors across demographics, behaviours, access, chronic conditions and socioeconomic position. All candidate variable names must still be verified against the 2024 BRFSS codebook before the proposal.',
   },
@@ -102,7 +102,7 @@ export const topicOptions: readonly BrfssTopicOption[] = [
       'Can demographic, behavioural, healthcare access, chronic disease, and disability variables predict mental health issues among BRFSS respondents?',
     outcomes: [
       'Frequent mental distress (MENTHLTH ≥14 days)',
-      'Daily or near-daily marijuana use (optional module — availability varies by state)',
+      'Daily or near-daily marijuana use (optional module - availability varies by state)',
       'Heavy or frequent alcohol use (ALCDAY4-derived)',
       'Current daily smoking (SMOKDAY2)',
     ],
@@ -119,7 +119,7 @@ export const topicOptions: readonly BrfssTopicOption[] = [
       'DIABETE4',
     ],
     literature:
-      'Parekh & Fahim (2021, Drug and Alcohol Dependence 225:108789) — pooled 2016–2019 BRFSS; logistic regression, decision tree, random forest and Naive Bayes to predict daily marijuana use. Also Cree et al. (2020, MMWR 69(36)) on frequent mental distress by disability status.',
+      'Parekh & Fahim (2021, Drug and Alcohol Dependence 225:108789) - pooled 2016–2019 BRFSS; logistic regression, decision tree, random forest and Naive Bayes to predict daily marijuana use. Also Cree et al. (2020, MMWR 69(36)) on frequent mental distress by disability status.',
     whyItMatters:
       'Substance use is associated with mental health, behavioural risk factors, healthcare access, social position and chronic disease burden, and Parekh & Fahim provide a direct methodological precedent for respondent-level BRFSS ML. Caution: marijuana questions sit in state-dependent optional modules, so confirm availability and every variable name in the 2024 codebook first.',
   },
@@ -146,9 +146,9 @@ export const topicOptions: readonly BrfssTopicOption[] = [
       'DIABETE4',
     ],
     literature:
-      'Clark et al. (2021, J Gen Intern Med 36(5):1181–1188) — machine-learning models predicting self-rated health from BRFSS, stratified by age, race/ethnicity and sex; a methodological precedent for respondent-level prediction with health-equity framing.',
+      'Clark et al. (2021, J Gen Intern Med 36(5):1181–1188) - machine-learning models predicting self-rated health from BRFSS, stratified by age, race/ethnicity and sex; a methodological precedent for respondent-level prediction with health-equity framing.',
     whyItMatters:
-      'Gaps in preventive care and access flag populations at risk of late diagnosis and higher downstream acute-care cost — the "move care left" argument from Lecture 1. Insurance (PRIMINSR), cost barriers and socioeconomic variables make this a natural access-equity story. Verify every candidate variable against the 2024 codebook (names and coding change between BRFSS years).',
+      'Gaps in preventive care and access flag populations at risk of late diagnosis and higher downstream acute-care cost - the "move care left" argument from Lecture 1. Insurance (PRIMINSR), cost barriers and socioeconomic variables make this a natural access-equity story. Verify every candidate variable against the 2024 codebook (names and coding change between BRFSS years).',
   },
 ]
 
@@ -163,7 +163,7 @@ export const steps: readonly ProjectStep[] = [
       'Download the 2024 BRFSS Codebook (ZIP, ~3 MB) and the Calculated Variables PDF',
       'Run the course repo notebook "Read BRFSS ASCII file.ipynb" to generate brfss2024_variable_dictionary.csv and LLCP2024_sample.csv',
       'Remove nrows=50 in the pd.read_fwf call to load the full dataset: expect 457,670 rows and 297 columns',
-      'Do NOT submit the full raw dataset — create and document a smaller working dataset instead',
+      'Do NOT submit the full raw dataset - create and document a smaller working dataset instead',
     ],
   },
   {
@@ -173,7 +173,7 @@ export const steps: readonly ProjectStep[] = [
     actions: [
       'Check in the codebook that the outcome variable is actually available and usable in 2024 (common mistake #1)',
       'Cap the predictor list at 20; prefer variables used in the anchor literature',
-      'Beware optional modules — they vary by state and shrink the analytic sample',
+      'Beware optional modules - they vary by state and shrink the analytic sample',
       'Assign each variable a role: outcome, predictor, or subgroup variable',
       'Agree the general question form: "Among respondents in the 2024 BRFSS analytic sample, can selected demographic, behavioural, healthcare access, chronic condition, and disability variables predict [outcome]?"',
     ],
@@ -181,11 +181,11 @@ export const steps: readonly ProjectStep[] = [
   {
     title: 'Build a variable dictionary and recode responsibly',
     detail:
-      'You must demonstrate you understand every variable you use. BRFSS quirks: 7/77 = "Don’t know / Not sure", 9/99 = "Refused", BLANK = not asked or missing. Data preparation and variable handling is worth 6% — the single largest final-rubric criterion.',
+      'You must demonstrate you understand every variable you use. BRFSS quirks: 7/77 = "Don’t know / Not sure", 9/99 = "Refused", BLANK = not asked or missing. Data preparation and variable handling is worth 6% - the single largest final-rubric criterion.',
     actions: [
       'For each variable record: BRFSS name, concept, original coding, your recoded version, and its role (outcome/predictor/subgroup)',
       'Recode outcomes to clear binaries, e.g. GENHLTH → good/better vs fair/poor; MENTHLTH → ≥14 vs <14 days',
-      'Map 7/77 and 9/99 codes to missing before any modelling — never treat them as real values',
+      'Map 7/77 and 9/99 codes to missing before any modelling - never treat them as real values',
       'Keep recoding simple, transparent and defensible; cite references for cut-points (e.g. CDC frequent-distress ≥14 days)',
       'Add an entity-relationship diagram for your working database if needed',
     ],
@@ -210,13 +210,13 @@ export const steps: readonly ProjectStep[] = [
       'Produce a Table 1 summarising key demographics and predictor/outcome variables',
       'Compare outcome status across selected predictors (the recode → groupby → rate pattern from Lecture_1.ipynb)',
       'Include at least two clear charts or tables',
-      'Check descriptive patterns now — later you must confirm model findings are consistent with them',
+      'Check descriptive patterns now - later you must confirm model findings are consistent with them',
     ],
   },
   {
     title: 'Build the baseline regression model',
     detail:
-      'One baseline regression is mandatory — logistic recommended (linear only for a continuous outcome), with a modest set of relevant predictors. Its purpose is an interpretable benchmark, not perfection.',
+      'One baseline regression is mandatory - logistic recommended (linear only for a continuous outcome), with a modest set of relevant predictors. Its purpose is an interpretable benchmark, not perfection.',
     actions: [
       'Split data into training and testing sets before fitting anything',
       'Fit logistic regression on a modest, justified predictor subset',
@@ -232,7 +232,7 @@ export const steps: readonly ProjectStep[] = [
       'Train the same train/test split used for the baseline so comparison is fair',
       'Limit tuning to basics: maximum tree depth, minimum samples per leaf, number of trees in a random forest',
       'Extract feature importances to compare with the regression coefficients',
-      'Be able to explain every model you use — using advanced models you cannot explain is a listed common mistake',
+      'Be able to explain every model you use - using advanced models you cannot explain is a listed common mistake',
     ],
   },
   {
@@ -249,7 +249,7 @@ export const steps: readonly ProjectStep[] = [
   {
     title: 'Interpret findings in public health terms',
     detail:
-      'Explain what the models suggest — which variables mattered, whether results make public health sense, consistency with descriptives, limitations, and what extra data would help. Avoid causal language: a cross-sectional prediction exercise does not support "X causes Y".',
+      'Explain what the models suggest - which variables mattered, whether results make public health sense, consistency with descriptives, limitations, and what extra data would help. Avoid causal language: a cross-sectional prediction exercise does not support "X causes Y".',
     actions: [
       'Answer the five required interpretation questions: importance, public-health sense, consistency with descriptives, limitations, additional data',
       'Include the required limitation statement: unweighted respondent-level exercise on the 2024 BRFSS analytic sample, not nationally representative prevalence estimates',
@@ -281,7 +281,7 @@ export const roles: readonly ProjectRole[] = [
   {
     role: 'Data preparation lead',
     responsibility:
-      'Reviews the 2024 codebook, selects variables, builds the variable dictionary, handles recoding (7/77, 9/99, BLANK) and missing values — owns the 6% data-prep criterion',
+      'Reviews the 2024 codebook, selects variables, builds the variable dictionary, handles recoding (7/77, 9/99, BLANK) and missing values - owns the 6% data-prep criterion',
   },
   {
     role: 'Descriptive analysis lead',
@@ -296,7 +296,7 @@ export const roles: readonly ProjectRole[] = [
   {
     role: 'Interpretation and report lead',
     responsibility:
-      'Interprets results in public health terms, writes the 2,500–3,500-word report, and prepares the presentation slides — smaller groups combine roles; larger groups may share one',
+      'Interprets results in public health terms, writes the 2,500–3,500-word report, and prepares the presentation slides - smaller groups combine roles; larger groups may share one',
   },
 ]
 
@@ -312,7 +312,7 @@ export const proposalRubric: readonly RubricRow[] = [
     criterion: 'Data feasibility and variable selection',
     weight: '3%',
     expectation:
-      'Identifies a feasible outcome and a manageable predictor set; variables must exist in the 2024 BRFSS codebook, with awareness of coding, missingness and recoding needs — the largest proposal criterion',
+      'Identifies a feasible outcome and a manageable predictor set; variables must exist in the 2024 BRFSS codebook, with awareness of coding, missingness and recoding needs - the largest proposal criterion',
   },
   {
     criterion: 'Preliminary literature or background justification',
@@ -340,7 +340,7 @@ export const finalRubric: readonly RubricRow[] = [
     criterion: 'Data preparation and variable handling',
     weight: '6%',
     expectation:
-      'Selects appropriate variables, recodes them clearly, handles missing/refused/skipped responses responsibly, and documents key decisions — the single biggest final criterion',
+      'Selects appropriate variables, recodes them clearly, handles missing/refused/skipped responses responsibly, and documents key decisions - the single biggest final criterion',
   },
   {
     criterion: 'Descriptive analysis and sample understanding',
@@ -364,7 +364,7 @@ export const finalRubric: readonly RubricRow[] = [
     criterion: 'Completeness of collaterals',
     weight: '2%',
     expectation:
-      'Submits all required materials — final report, analysis notebook, slides, peer evaluation — complete, readable, well-organised, and mutually consistent (full raw BRFSS dataset not required)',
+      'Submits all required materials - final report, analysis notebook, slides, peer evaluation - complete, readable, well-organised, and mutually consistent (full raw BRFSS dataset not required)',
   },
 ]
 
@@ -379,7 +379,7 @@ export const resources: readonly ResourceLink[] = [
     url: 'https://www.cdc.gov/brfss/annual_data/annual_2024.html',
   },
   {
-    label: 'Course GitHub repository (ISSS623-AHA/ISSS623_2024 — lecture notebooks and Group_Project folder)',
+    label: 'Course GitHub repository (ISSS623-AHA/ISSS623_2024 - lecture notebooks and Group_Project folder)',
     url: 'https://github.com/ISSS623-AHA/ISSS623_2024',
   },
   {

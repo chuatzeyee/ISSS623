@@ -40,7 +40,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'AIC (Agency for Integrated Care)',
     definition:
-      'The agency that coordinates the intermediate and long-term care (ILTC) sector — nursing homes, home care, centre-based care — and manages referrals between hospitals and community care providers.',
+      'The agency that coordinates the intermediate and long-term care (ILTC) sector - nursing homes, home care, centre-based care - and manages referrals between hospitals and community care providers.',
     category: 'Health System',
     related: ['ILTC', 'VWO'],
   },
@@ -54,7 +54,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'HPB (Health Promotion Board)',
     definition:
-      'The statutory board responsible for national health promotion and preventive health programmes — the agency most aligned with the "beyond healthcare to health" shift and Healthier SG.',
+      'The statutory board responsible for national health promotion and preventive health programmes - the agency most aligned with the "beyond healthcare to health" shift and Healthier SG.',
     category: 'Health System',
     related: ['Healthier SG', '3 Beyonds'],
   },
@@ -89,7 +89,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'A&E (Accident & Emergency)',
     definition:
-      'The emergency department of an acute hospital — the most expensive point of entry into the system. Analytics that predicts and prevents (moving care left) aims to reduce avoidable A&E attendances and admissions.',
+      'The emergency department of an acute hospital - the most expensive point of entry into the system. Analytics that predicts and prevents (moving care left) aims to reduce avoidable A&E attendances and admissions.',
     category: 'Health System',
     related: ['SOC', 'Care continuum'],
   },
@@ -117,7 +117,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'Care continuum',
     definition:
-      'The five care settings: preventive (school, community, workplace, home), primary (polyclinics, GPs), acute (hospitals, A&E, SOCs), ILTC (nursing homes, hospices, home care) and social & community (senior activity centres, FSCs/SSOs). Moving care "left" toward prevention and home yields better outcomes at lower cost — acute care is the costliest setting.',
+      'The five care settings: preventive (school, community, workplace, home), primary (polyclinics, GPs), acute (hospitals, A&E, SOCs), ILTC (nursing homes, hospices, home care) and social & community (senior activity centres, FSCs/SSOs). Moving care "left" toward prevention and home yields better outcomes at lower cost - acute care is the costliest setting.',
     category: 'Health System',
     related: ['Polyclinic', 'ILTC', 'A&E'],
   },
@@ -133,7 +133,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'MediShield Life',
     definition:
-      'The universal national health insurance scheme providing risk pooling for large hospital bills — the catastrophic-insurance layer of the S+3M stack. Complemented by Integrated Shield Plans and, for long-term care, ElderShield/CareShield.',
+      'The universal national health insurance scheme providing risk pooling for large hospital bills - the catastrophic-insurance layer of the S+3M stack. Complemented by Integrated Shield Plans and, for long-term care, ElderShield/CareShield.',
     category: 'Financing',
     related: ['Integrated Shield Plan', 'CareShield', 'MediSave'],
   },
@@ -147,7 +147,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'CareShield (Life)',
     definition:
-      'National long-term care insurance (successor to ElderShield) that pays out monthly cash benefits when a person becomes severely disabled and unable to perform activities of daily living — pooling the financial risk of long-term care.',
+      'National long-term care insurance (successor to ElderShield) that pays out monthly cash benefits when a person becomes severely disabled and unable to perform activities of daily living - pooling the financial risk of long-term care.',
     category: 'Financing',
     related: ['MediShield Life', 'ILTC (Intermediate & Long-Term Care)'],
   },
@@ -161,7 +161,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'Subvention',
     definition:
-      'Direct government subsidy of care — up to 80% of costs in lower ward classes (B2/C) — ensuring universal access while retaining co-payment. The "S" in the S+3M financing framework.',
+      'Direct government subsidy of care - up to 80% of costs in lower ward classes (B2/C) - ensuring universal access while retaining co-payment. The "S" in the S+3M financing framework.',
     category: 'Financing',
     related: ['Co-payment', 'Medifund'],
   },
@@ -191,7 +191,7 @@ export const definitions: readonly Definition[] = [
   {
     term: '3 Beyonds',
     definition:
-      'MOH\'s strategy shift (~2016, "Beyond Healthcare 2020"): (1) beyond healthcare to health (prevention, Healthier SG), (2) beyond hospital to community (care near home, telemonitoring), (3) beyond quality to value (best value, sustainable — VDC). Each maps to an analytics use case: risk stratification, demand forecasting for community care, and outcome/cost benchmarking respectively.',
+      'MOH\'s strategy shift (~2016, "Beyond Healthcare 2020"): (1) beyond healthcare to health (prevention, Healthier SG), (2) beyond hospital to community (care near home, telemonitoring), (3) beyond quality to value (best value, sustainable - VDC). Each maps to an analytics use case: risk stratification, demand forecasting for community care, and outcome/cost benchmarking respectively.',
     category: 'Value & Policy',
     related: ['Healthier SG', 'VDC (Value Driven Care)', 'Healthcare 2020'],
   },
@@ -277,14 +277,14 @@ export const definitions: readonly Definition[] = [
   {
     term: 'Quadruple Aim',
     definition:
-      'Four goals for health system improvement: (1) enhance patient experience, (2) improve population health, (3) reduce cost, (4) improve provider work-life. The fourth aim was added to the original Triple Aim because of clinician burnout — a common quiz nuance.',
+      'Four goals for health system improvement: (1) enhance patient experience, (2) improve population health, (3) reduce cost, (4) improve provider work-life. The fourth aim was added to the original Triple Aim because of clinician burnout - a common quiz nuance.',
     category: 'Data Ecosystem',
     related: ['Learning Health System (LHS)'],
   },
   {
     term: 'EHR/EMR',
     definition:
-      'Electronic Health/Medical Record: the digital record of patient-provider interactions — demographic, clinical (vitals, medications, diagnostics) and administrative data. Singapore examples include NEHR, Epic and eHintS; EHRs feed electronic data warehouses and are the primary data source for operational IT.',
+      'Electronic Health/Medical Record: the digital record of patient-provider interactions - demographic, clinical (vitals, medications, diagnostics) and administrative data. Singapore examples include NEHR, Epic and eHintS; EHRs feed electronic data warehouses and are the primary data source for operational IT.',
     category: 'Data Ecosystem',
     related: ['NEHR (National Electronic Health Record)', 'Disease registry', 'Claims data'],
   },
@@ -305,7 +305,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'i2b2',
     definition:
-      'Informatics for Integrating Biology and the Bedside: an open-source research data warehouse framework and common data model for querying de-identified clinical data — the other common data model (with OMOP) named in the LHS learning phase.',
+      'Informatics for Integrating Biology and the Bedside: an open-source research data warehouse framework and common data model for querying de-identified clinical data - the other common data model (with OMOP) named in the LHS learning phase.',
     category: 'Data Ecosystem',
     related: ['OMOP', 'Learning Health System (LHS)'],
   },
@@ -326,21 +326,21 @@ export const definitions: readonly Definition[] = [
   {
     term: 'PhysioNet',
     definition:
-      'A free repository of curated physiological and clinical research datasets (home of MIMIC critical-care data) — an example of open curated data, contrasted with paid sources (Flatiron, Thomson Reuters) and non-curated scraping.',
+      'A free repository of curated physiological and clinical research datasets (home of MIMIC critical-care data) - an example of open curated data, contrasted with paid sources (Flatiron, Thomson Reuters) and non-curated scraping.',
     category: 'Data Ecosystem',
     related: ['data.gov.sg'],
   },
   {
     term: 'data.gov.sg',
     definition:
-      'Singapore\'s open data portal aggregating datasets from more than 70 agencies, including over 100 health datasets — the local open-data source named in the lecture alongside NIH and PhysioNet.',
+      'Singapore\'s open data portal aggregating datasets from more than 70 agencies, including over 100 health datasets - the local open-data source named in the lecture alongside NIH and PhysioNet.',
     category: 'Data Ecosystem',
     related: ['PhysioNet'],
   },
   {
     term: 'Claims data',
     definition:
-      'Administrative records of billing and reimbursement generated by patient-provider interactions. A major secondary data source for analytics — cheap and comprehensive but capturing what was billed rather than full clinical detail.',
+      'Administrative records of billing and reimbursement generated by patient-provider interactions. A major secondary data source for analytics - cheap and comprehensive but capturing what was billed rather than full clinical detail.',
     category: 'Data Ecosystem',
     related: ['EHR/EMR'],
   },
@@ -349,14 +349,14 @@ export const definitions: readonly Definition[] = [
   {
     term: 'Analytics value chain (descriptive → cognitive)',
     definition:
-      'Gartner\'s maturity ladder: descriptive ("what happened?" — EDA, dashboards, reports), diagnostic ("why did it happen?" — drill-down, association, causality), predictive ("what will happen?" — risk scores, forecasting, anomaly detection), prescriptive ("how can we make it happen?" — simulation, optimisation, reinforcement learning) and cognitive (adaptive/continual learning, LLMs/GenAI). Value and difficulty increase from hindsight to insight to foresight; ISSS623 focuses on the first three stages.',
+      'Gartner\'s maturity ladder: descriptive ("what happened?" - EDA, dashboards, reports), diagnostic ("why did it happen?" - drill-down, association, causality), predictive ("what will happen?" - risk scores, forecasting, anomaly detection), prescriptive ("how can we make it happen?" - simulation, optimisation, reinforcement learning) and cognitive (adaptive/continual learning, LLMs/GenAI). Value and difficulty increase from hindsight to insight to foresight; ISSS623 focuses on the first three stages.',
     category: 'Analytics & AI',
     related: ['AI (Artificial Intelligence)', 'Machine Learning (ML)', 'LLM (Large Language Model)'],
   },
   {
     term: 'AI (Artificial Intelligence)',
     definition:
-      'The broadest field, encompassing machine learning plus planning, expert systems, robotics and computer vision. Nesting to memorise: AI ⊃ ML ⊃ Deep Learning — "AI in healthcare goes beyond deep learning."',
+      'The broadest field, encompassing machine learning plus planning, expert systems, robotics and computer vision. Nesting to memorise: AI ⊃ ML ⊃ Deep Learning - "AI in healthcare goes beyond deep learning."',
     category: 'Analytics & AI',
     related: ['Machine Learning (ML)', 'Deep learning'],
   },
@@ -384,7 +384,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'NLP (Natural Language Processing)',
     definition:
-      'Techniques for extracting meaning from unstructured text such as clinical notes and discharge summaries — a key deep-learning application area in healthcare and the foundation of LLMs.',
+      'Techniques for extracting meaning from unstructured text such as clinical notes and discharge summaries - a key deep-learning application area in healthcare and the foundation of LLMs.',
     category: 'Analytics & AI',
     related: ['Deep learning', 'LLM (Large Language Model)'],
   },
@@ -405,7 +405,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'Model monitoring',
     definition:
-      'The final, continuous stage of the clinical-grade AI lifecycle: watching a deployed model for performance drift and degradation, with safeguards, version control and audit trails so it can be retrained or withdrawn — because clinical data and populations change after deployment.',
+      'The final, continuous stage of the clinical-grade AI lifecycle: watching a deployed model for performance drift and degradation, with safeguards, version control and audit trails so it can be retrained or withdrawn - because clinical data and populations change after deployment.',
     category: 'Analytics & AI',
     related: ['Clinical-grade model'],
   },
@@ -414,63 +414,63 @@ export const definitions: readonly Definition[] = [
   {
     term: 'Super-aged society',
     definition:
-      'UN/WHO convention: a society where 21% or more of the population is aged 65+ ("aged" = 14%). Singapore crosses the 21% threshold around 2026, with 20.7% in 2025 rising to a projected 23.9% by 2030 — roughly 1 in 4 residents.',
+      'UN/WHO convention: a society where 21% or more of the population is aged 65+ ("aged" = 14%). Singapore crosses the 21% threshold around 2026, with 20.7% in 2025 rising to a projected 23.9% by 2030 - roughly 1 in 4 residents.',
     category: 'Ageing & Debate',
     related: ['Old-age support ratio', 'Silver tsunami'],
   },
   {
     term: 'Old-age support ratio',
     definition:
-      'The number of residents aged 20–64 per resident aged 65+. In Singapore it falls from 5.7 (2015) to a projected 2.7 (2030) — the headline statistic of the challenge framing in the ageing debate.',
+      'The number of residents aged 20–64 per resident aged 65+. In Singapore it falls from 5.7 (2015) to a projected 2.7 (2030) - the headline statistic of the challenge framing in the ageing debate.',
     category: 'Ageing & Debate',
     related: ['Old-age dependency ratio', 'Super-aged society'],
   },
   {
     term: 'Old-age dependency ratio',
     definition:
-      'The inverse of the support ratio: persons 65+ per working-age person. The word "dependency" itself embeds deficit framing — it assumes everyone over 65 is a dependent, a point the opposition side exploits since most 65–74-year-olds are healthy, active and independent.',
+      'The inverse of the support ratio: persons 65+ per working-age person. The word "dependency" itself embeds deficit framing - it assumes everyone over 65 is a dependent, a point the opposition side exploits since most 65–74-year-olds are healthy, active and independent.',
     category: 'Ageing & Debate',
     related: ['Old-age support ratio', 'Deficit-based framing'],
   },
   {
     term: 'Silver tsunami',
     definition:
-      'An alarmist metaphor for the ageing wave. It is analytically wrong — a tsunami is sudden and unpredictable, whereas ageing is gradual, decades-predictable and the product of development success — and socially corrosive, homogenising 65–100-year-olds and breeding intergenerational resentment.',
+      'An alarmist metaphor for the ageing wave. It is analytically wrong - a tsunami is sudden and unpredictable, whereas ageing is gradual, decades-predictable and the product of development success - and socially corrosive, homogenising 65–100-year-olds and breeding intergenerational resentment.',
     category: 'Ageing & Debate',
     related: ['Deficit-based framing', 'Super-aged society'],
   },
   {
     term: 'Compression of morbidity',
     definition:
-      'Pushing illness into a shorter window at the very end of life, closing the gap between lifespan and healthspan. In Singapore, life expectancy is 83.9 years (2025) but healthy life expectancy is about 74 — roughly 10 years lived in poor health that prevention (e.g. Healthier SG) aims to compress.',
+      'Pushing illness into a shorter window at the very end of life, closing the gap between lifespan and healthspan. In Singapore, life expectancy is 83.9 years (2025) but healthy life expectancy is about 74 - roughly 10 years lived in poor health that prevention (e.g. Healthier SG) aims to compress.',
     category: 'Ageing & Debate',
     related: ['Healthy life expectancy', 'Healthier SG'],
   },
   {
     term: 'Healthy life expectancy',
     definition:
-      'The average number of years lived in good health — about 74 in Singapore versus a total life expectancy of 83.9 years (2025). Reporting it alongside the support ratio is the asset-framing move: measure what you want to grow.',
+      'The average number of years lived in good health - about 74 in Singapore versus a total life expectancy of 83.9 years (2025). Reporting it alongside the support ratio is the asset-framing move: measure what you want to grow.',
     category: 'Ageing & Debate',
     related: ['Compression of morbidity', 'Deficit-based framing'],
   },
   {
     term: 'Longevity economy',
     definition:
-      'The economic value created by and for older adults — as consumers, workers and entrepreneurs — sometimes called the longevity dividend. With re-employment to 70 and healthspan gains, businesses serving older adults (health tech, tourism, learning) become a growth sector exportable to every ageing Asian economy.',
+      'The economic value created by and for older adults - as consumers, workers and entrepreneurs - sometimes called the longevity dividend. With re-employment to 70 and healthspan gains, businesses serving older adults (health tech, tourism, learning) become a growth sector exportable to every ageing Asian economy.',
     category: 'Ageing & Debate',
     related: ['Intergenerational capital', 'Deficit-based framing'],
   },
   {
     term: 'Intergenerational capital',
     definition:
-      'The knowledge, care and wealth that flow from older to younger generations — grandparent childcare that keeps dual-income parents in the workforce, mentoring and skills transfer, and family wealth that funds housing and education. The dependency ledger counts none of it.',
+      'The knowledge, care and wealth that flow from older to younger generations - grandparent childcare that keeps dual-income parents in the workforce, mentoring and skills transfer, and family wealth that funds housing and education. The dependency ledger counts none of it.',
     category: 'Ageing & Debate',
     related: ['Longevity economy', 'Old-age dependency ratio'],
   },
   {
     term: 'Deficit-based framing',
     definition:
-      'Framing seniors primarily as consumers of resources (costs, beds, dependents), versus asset-based framing of seniors as contributors. Framing has measurable health effects: Becca Levy\'s Yale research found older adults with positive perceptions of ageing lived about 7.5 years longer — negative national framing acts as a population-level nocebo. Framing also determines which data get collected and which analytics get built.',
+      'Framing seniors primarily as consumers of resources (costs, beds, dependents), versus asset-based framing of seniors as contributors. Framing has measurable health effects: Becca Levy\'s Yale research found older adults with positive perceptions of ageing lived about 7.5 years longer - negative national framing acts as a population-level nocebo. Framing also determines which data get collected and which analytics get built.',
     category: 'Ageing & Debate',
     related: ['Silver tsunami', 'Intergenerational capital', 'Healthy life expectancy'],
   },
@@ -493,7 +493,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'Survey weights',
     definition:
-      'Weights that adjust survey responses for sampling design and non-response so estimates represent the population. BRFSS provides them, but the project scope explicitly states survey weights are NOT used — results describe the sample, not the weighted US population.',
+      'Weights that adjust survey responses for sampling design and non-response so estimates represent the population. BRFSS provides them, but the project scope explicitly states survey weights are NOT used - results describe the sample, not the weighted US population.',
     category: 'Project & Tools',
     related: ['BRFSS', 'Codebook'],
   },
@@ -514,7 +514,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'GitHub',
     definition:
-      'The version-control platform hosting the course repository (ISSS623-AHA/ISSS623_2024) and each group\'s project code. The mandated collaboration loop: Pull at the start of every session, Commit then Push at the end — and never delete the hidden .git folder.',
+      'The version-control platform hosting the course repository (ISSS623-AHA/ISSS623_2024) and each group\'s project code. The mandated collaboration loop: Pull at the start of every session, Commit then Push at the end - and never delete the hidden .git folder.',
     category: 'Project & Tools',
     related: ['Google Colab'],
   },

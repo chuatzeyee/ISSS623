@@ -11,7 +11,7 @@ const cards = [
     to: '/topics',
     icon: BookOpen,
     title: 'Topics & Glossary',
-    description: 'Healthcare landscape, financing, value, data ecosystem and analytics — organized by lecture segment, plus a searchable glossary',
+    description: 'Healthcare landscape, financing, value, data ecosystem and analytics - organized by lecture segment, plus a searchable glossary',
     count: sessions.reduce((sum, s) => sum + s.topics.length, 0) + definitions.length,
     unit: 'entries',
   },
@@ -35,7 +35,7 @@ const cards = [
     to: '/quiz',
     icon: ClipboardCheck,
     title: 'Practice Quiz',
-    description: 'MCQ bank covering every lecture topic with explanations — built for Quiz 1 and Quiz 2 prep',
+    description: 'MCQ bank covering every lecture topic with explanations - built for Quiz 1 and Quiz 2 prep',
     count: questions.length,
     unit: 'questions',
   },
@@ -45,7 +45,7 @@ function nextDeadline(): { date: string; what: string } | null {
   const now = new Date()
   for (const d of deadlines) {
     const dt = new Date(d.date + 'T23:59:59')
-    if (dt >= now) return { date: d.date, what: d.what.split(' — ')[0] }
+    if (dt >= now) return { date: d.date, what: d.what.split(' - ')[0] }
   }
   return null
 }

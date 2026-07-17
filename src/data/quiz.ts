@@ -16,7 +16,7 @@ export const questions: readonly QuizQuestion[] = [
     id: 'q2',
     topic: 'Healthcare Landscape',
     prompt:
-      'Corporatization of Singapore public hospitals — giving each hospital its own Board with autonomy and flexibility — began in 1985 with which hospital?',
+      'Corporatization of Singapore public hospitals - giving each hospital its own Board with autonomy and flexibility - began in 1985 with which hospital?',
     options: ['SGH', 'NUH', 'TTSH', 'KKH'],
     answerIndex: 1,
     explanation:
@@ -36,7 +36,7 @@ export const questions: readonly QuizQuestion[] = [
     id: 'q4',
     topic: 'Healthcare Landscape',
     prompt:
-      'Which agency coordinates the Intermediate and Long-Term Care (ILTC) sector — nursing homes, hospices, and home- and centre-based care?',
+      'Which agency coordinates the Intermediate and Long-Term Care (ILTC) sector - nursing homes, hospices, and home- and centre-based care?',
     options: ['Synapxe', 'ALPS', 'AIC', 'HPB'],
     answerIndex: 2,
     explanation:
@@ -85,7 +85,7 @@ export const questions: readonly QuizQuestion[] = [
     id: 'q8',
     topic: 'Healthcare Landscape',
     prompt:
-      'Coordination of care has four layers. Which layer does this course — with integrated records, care pathways, and data analytics & feedback — primarily sit in?',
+      'Coordination of care has four layers. Which layer does this course - with integrated records, care pathways, and data analytics & feedback - primarily sit in?',
     options: [
       'Ancillary and support services',
       'Clinical care (care plans, medication reconciliation)',
@@ -94,7 +94,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 3,
     explanation:
-      'The IT/information systems layer covers integrated records, care pathways, and data analytics & feedback — the subject of this course. The other three layers are real coordination layers but are not where analytics lives.',
+      'The IT/information systems layer covers integrated records, care pathways, and data analytics & feedback - the subject of this course. The other three layers are real coordination layers but are not where analytics lives.',
   },
   {
     id: 'q9',
@@ -104,7 +104,7 @@ export const questions: readonly QuizQuestion[] = [
     options: ['Health workforce', 'Financing', 'Responsiveness', 'Service delivery'],
     answerIndex: 2,
     explanation:
-      'Responsiveness is a goal, alongside improved health (level and equity), social & financial risk protection, and improved efficiency. The six building blocks are service delivery, health workforce, information, medical products/vaccines/technologies, financing, and leadership/governance — mediated by access, coverage, quality and safety.',
+      'Responsiveness is a goal, alongside improved health (level and equity), social & financial risk protection, and improved efficiency. The six building blocks are service delivery, health workforce, information, medical products/vaccines/technologies, financing, and leadership/governance - mediated by access, coverage, quality and safety.',
   },
   {
     id: 'q10',
@@ -119,7 +119,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 3,
     explanation:
-      'Patients, clinicians and MOH are the obvious answers everyone gives. Volunteering a category others miss — informal caregivers, IT vendors like Synapxe or Epic, and healthy citizens as taxpayers and future patients — earns participation marks.',
+      'Patients, clinicians and MOH are the obvious answers everyone gives. Volunteering a category others miss - informal caregivers, IT vendors like Synapxe or Epic, and healthy citizens as taxpayers and future patients - earns participation marks.',
   },
 
   // ── Financing & Value ─────────────────────────────────────────────
@@ -163,9 +163,9 @@ export const questions: readonly QuizQuestion[] = [
     prompt:
       'Under the 1993 MOH White Paper "Affordable Healthcare", when does the government intervene directly in the healthcare market?',
     options: [
-      'Always — healthcare is fully state-provided and free at point of use',
+      'Always - healthcare is fully state-provided and free at point of use',
       'When the market fails to keep costs down',
-      'Never — the market alone determines prices',
+      'Never - the market alone determines prices',
       'Only during declared public health emergencies',
     ],
     answerIndex: 1,
@@ -198,7 +198,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 0,
     explanation:
-      'Value = outcomes that matter to patients ÷ total cost across the full cycle of care. Cost-cutting without regard to outcomes can be harmful, and outcomes are condition-specific and multidimensional — so revenue- or volume-based definitions miss the point.',
+      'Value = outcomes that matter to patients ÷ total cost across the full cycle of care. Cost-cutting without regard to outcomes can be harmful, and outcomes are condition-specific and multidimensional - so revenue- or volume-based definitions miss the point.',
   },
   {
     id: 'q17',
@@ -269,7 +269,7 @@ export const questions: readonly QuizQuestion[] = [
     options: ['Data', 'Information', 'Knowledge', 'Wisdom'],
     answerIndex: 3,
     explanation:
-      'Wisdom is the action layer — applying knowledge to decide and act. Knowledge was the contextual inference that the senior may have fainted; the alert itself is the actionable wisdom step.',
+      'Wisdom is the action layer - applying knowledge to decide and act. Knowledge was the contextual inference that the senior may have fainted; the alert itself is the actionable wisdom step.',
   },
   {
     id: 'q23',
@@ -299,7 +299,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 2,
     explanation:
-      'The fourth aim — improving the work-life of healthcare providers — was added because of clinician burnout. Patient experience, population health and cost reduction were already the original Triple Aim.',
+      'The fourth aim - improving the work-life of healthcare providers - was added because of clinician burnout. Patient experience, population health and cost reduction were already the original Triple Aim.',
   },
   {
     id: 'q25',
@@ -320,7 +320,7 @@ export const questions: readonly QuizQuestion[] = [
     topic: 'Data Ecosystem',
     prompt: 'What is the guiding principle of Singapore\'s NEHR?',
     options: [
-      '"One Patient, One Health Record" — a national record following the patient across GP, hospital and community care',
+      '"One Patient, One Health Record" - a national record following the patient across GP, hospital and community care',
       'A de-identified national research data lake open to all universities',
       'A single Epic instance replacing every hospital\'s EMR',
       'A national insurance-claims clearing house',
@@ -372,7 +372,7 @@ export const questions: readonly QuizQuestion[] = [
     options: ['Diagnostic', 'Descriptive', 'Predictive', 'Prescriptive'],
     answerIndex: 1,
     explanation:
-      'Descriptive analytics (EDA, dashboards, reports) answers "what happened?" — hindsight. Diagnostic asks why, predictive asks what will happen, and prescriptive asks how to make it happen.',
+      'Descriptive analytics (EDA, dashboards, reports) answers "what happened?" - hindsight. Diagnostic asks why, predictive asks what will happen, and prescriptive asks how to make it happen.',
   },
   {
     id: 'q31',
@@ -392,7 +392,7 @@ export const questions: readonly QuizQuestion[] = [
     options: ['Predictive', 'Prescriptive', 'Diagnostic', 'Cognitive'],
     answerIndex: 0,
     explanation:
-      'Risk scores, forecasting and anomaly detection answer "what will happen?" — predictive analytics (foresight). Prescriptive would recommend or optimise an intervention; cognitive is the adaptive/continual-learning extension including LLMs and GenAI.',
+      'Risk scores, forecasting and anomaly detection answer "what will happen?" - predictive analytics (foresight). Prescriptive would recommend or optimise an intervention; cognitive is the adaptive/continual-learning extension including LLMs and GenAI.',
   },
   {
     id: 'q33',
@@ -425,7 +425,7 @@ export const questions: readonly QuizQuestion[] = [
     options: [
       'AI is a subset of machine learning',
       'ML and deep learning are separate, non-overlapping fields',
-      'All deep learning is machine learning, and all machine learning is AI — but not vice versa',
+      'All deep learning is machine learning, and all machine learning is AI - but not vice versa',
       'AI and deep learning are exactly the same thing',
     ],
     answerIndex: 2,
@@ -474,7 +474,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 1,
     explanation:
-      'Model monitoring & safeguards is an explicit lifecycle stage — clinical-grade models must be watched for drift and safety after deployment. "Validated once, safe forever" is exactly the misconception the clinical-grade framework rejects.',
+      'Model monitoring & safeguards is an explicit lifecycle stage - clinical-grade models must be watched for drift and safety after deployment. "Validated once, safe forever" is exactly the misconception the clinical-grade framework rejects.',
   },
 
   // ── Ageing & Policy ───────────────────────────────────────────────
@@ -486,7 +486,7 @@ export const questions: readonly QuizQuestion[] = [
     options: ['5.7', '4.9', '2.7', '1.5'],
     answerIndex: 2,
     explanation:
-      'The ratio falls from 5.7 (2015) to 2.7 (2030) — the number of working-age residents per senior roughly halves in 15 years. 5.7 is the 2015 figure, and the other options are invented.',
+      'The ratio falls from 5.7 (2015) to 2.7 (2030) - the number of working-age residents per senior roughly halves in 15 years. 5.7 is the 2015 figure, and the other options are invented.',
   },
   {
     id: 'q40',
@@ -496,13 +496,13 @@ export const questions: readonly QuizQuestion[] = [
     options: ['21%', '14%', '23.9%', '7%'],
     answerIndex: 0,
     explanation:
-      'Super-aged = 21% aged 65+, a threshold Singapore crosses around 2026. 14% is the "aged society" threshold, 7% is "ageing society", and 23.9% is Singapore\'s projected 65+ share in 2030 — not the threshold.',
+      'Super-aged = 21% aged 65+, a threshold Singapore crosses around 2026. 14% is the "aged society" threshold, 7% is "ageing society", and 23.9% is Singapore\'s projected 65+ share in 2030 - not the threshold.',
   },
   {
     id: 'q41',
     topic: 'Ageing & Policy',
     prompt: 'What share of Singapore residents is projected to be aged 65+ by 2030?',
-    options: ['20.7%', '23.9% — roughly 1 in 4', '30%', '16.6%'],
+    options: ['20.7%', '23.9% - roughly 1 in 4', '30%', '16.6%'],
     answerIndex: 1,
     explanation:
       'The projection is 23.9% by 2030 (about one in four residents), up from 20.7% in 2025. Quoting the Singapore-specific number rather than a generality is a debate delivery tactic in itself.',
@@ -519,7 +519,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 0,
     explanation:
-      'Compression of morbidity means pushing illness into a shorter period before death. In Singapore, life expectancy is 83.9 years but healthy life expectancy is about 74 — roughly 10 years in poor health, which prevention aims to compress.',
+      'Compression of morbidity means pushing illness into a shorter period before death. In Singapore, life expectancy is 83.9 years but healthy life expectancy is about 74 - roughly 10 years in poor health, which prevention aims to compress.',
   },
   {
     id: 'q43',
@@ -529,7 +529,7 @@ export const questions: readonly QuizQuestion[] = [
       'Because ageing affects only a tiny minority of the population',
       'Because tsunamis are slow and ageing is sudden',
       'Because population ageing is actually reversing in Singapore',
-      'Because ageing is gradual, predictable decades ahead, and the product of development success — the opposite of a sudden disaster',
+      'Because ageing is gradual, predictable decades ahead, and the product of development success - the opposite of a sudden disaster',
     ],
     answerIndex: 3,
     explanation:
@@ -543,7 +543,7 @@ export const questions: readonly QuizQuestion[] = [
     options: ['2.5 years', '7.5 years', '12 years', '15 years'],
     answerIndex: 1,
     explanation:
-      'Levy found ~7.5 years longer life for those with positive age self-perceptions, plus lower dementia incidence — effects larger than many clinical interventions. This is the opposition\'s strongest evidence that deficit framing is itself a population-level health risk.',
+      'Levy found ~7.5 years longer life for those with positive age self-perceptions, plus lower dementia incidence - effects larger than many clinical interventions. This is the opposition\'s strongest evidence that deficit framing is itself a population-level health risk.',
   },
   {
     id: 'q45',
@@ -554,11 +554,11 @@ export const questions: readonly QuizQuestion[] = [
       'They measure entirely different populations',
       'The dependency ratio counts only frail seniors needing care',
       'The support ratio includes children while the dependency ratio does not',
-      'They are the same fraction inverted — and "dependency" wording itself embeds a deficit framing',
+      'They are the same fraction inverted - and "dependency" wording itself embeds a deficit framing',
     ],
     answerIndex: 3,
     explanation:
-      'The two ratios are mathematical inverses of the same fraction. Calling it "dependency" builds the deficit framing into the vocabulary — a point Group B exploits, since the ratio assumes everyone 65+ is dependent when most 65–74-year-olds are healthy and independent.',
+      'The two ratios are mathematical inverses of the same fraction. Calling it "dependency" builds the deficit framing into the vocabulary - a point Group B exploits, since the ratio assumes everyone 65+ is dependent when most 65–74-year-olds are healthy and independent.',
   },
   {
     id: 'q46',
@@ -572,7 +572,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 0,
     explanation:
-      'MOH (2021) projects national health expenditure rising from $22B in 2018 to $59B by 2030 — nearly tripling. Alongside it, the healthcare workforce must grow from 129k (2024) to about 156k by 2030 (+20%), against a WHO-projected global shortfall of 18M workers.',
+      'MOH (2021) projects national health expenditure rising from $22B in 2018 to $59B by 2030 - nearly tripling. Alongside it, the healthcare workforce must grow from 129k (2024) to about 156k by 2030 (+20%), against a WHO-projected global shortfall of 18M workers.',
   },
 
   // ── BRFSS Project ─────────────────────────────────────────────────
@@ -620,7 +620,7 @@ export const questions: readonly QuizQuestion[] = [
     options: ['Don\'t know / Not sure', 'Refused', 'Not asked (missing)', 'A valid count of 99 days'],
     answerIndex: 1,
     explanation:
-      '9/99 means "Refused", while 7/77 means "Don\'t know / Not sure" and BLANK means the question was not asked. Treating these codes as real values would corrupt every analysis — recoding them responsibly is worth 6% of the grade.',
+      '9/99 means "Refused", while 7/77 means "Don\'t know / Not sure" and BLANK means the question was not asked. Treating these codes as real values would corrupt every analysis - recoding them responsibly is worth 6% of the grade.',
   },
   {
     id: 'q51',
@@ -649,7 +649,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 3,
     explanation:
-      'SPOT = Supportive, Proactive, Openness, Thorough — each 15% of the peer score — plus overall participation, quantity, quality and ideas at 10% each. Practically: be responsive on the group chat and hit internal deadlines.',
+      'SPOT = Supportive, Proactive, Openness, Thorough - each 15% of the peer score - plus overall participation, quantity, quality and ideas at 10% each. Practically: be responsive on the group chat and hit internal deadlines.',
   },
   {
     id: 'q53',
@@ -669,12 +669,12 @@ export const questions: readonly QuizQuestion[] = [
     options: [
       'They are asked in every state, so no caveat applies',
       'They were permanently withdrawn in 2024',
-      'They are state-dependent — only some states administer them, so sample coverage varies',
+      'They are state-dependent - only some states administer them, so sample coverage varies',
       'They are only available for US territories, not states',
     ],
     answerIndex: 2,
     explanation:
-      'Optional modules vary by state — the project brief explicitly warns about this. A group choosing Topic B must check which states fielded the marijuana module in 2024, or their analytic sample will silently shrink or be biased.',
+      'Optional modules vary by state - the project brief explicitly warns about this. A group choosing Topic B must check which states fielded the marijuana module in 2024, or their analytic sample will silently shrink or be biased.',
   },
 
   // ── Python & Tools ────────────────────────────────────────────────
@@ -686,7 +686,7 @@ export const questions: readonly QuizQuestion[] = [
       'A DataFrame with one row per patient',
       'A pandas Series indexed by gender, containing each group\'s mean age',
       'A single scalar: the overall mean age',
-      'Nothing — it modifies df in place by adding a column',
+      'Nothing - it modifies df in place by adding a column',
     ],
     answerIndex: 1,
     explanation:
@@ -720,7 +720,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 2,
     explanation:
-      'isin returns a boolean Series, and .astype(int) converts True/False to 1/0 — the standard recode pattern for creating a binary outcome. Without astype(int) you would indeed get booleans, which is why option A is the tempting near-miss.',
+      'isin returns a boolean Series, and .astype(int) converts True/False to 1/0 - the standard recode pattern for creating a binary outcome. Without astype(int) you would indeed get booleans, which is why option A is the tempting near-miss.',
   },
   {
     id: 'q58',
@@ -734,7 +734,7 @@ export const questions: readonly QuizQuestion[] = [
   {
     id: 'q59',
     topic: 'Python & Tools',
-    prompt: 'In Google Colab, what does the number in brackets — e.g. [3] — next to a code cell indicate?',
+    prompt: 'In Google Colab, what does the number in brackets - e.g. [3] - next to a code cell indicate?',
     options: [
       'The cell contains 3 lines of code',
       'The cell was the third cell executed in this session',
@@ -758,7 +758,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 0,
     explanation:
-      'The mandated loop is Pull at the start of every session (get teammates\' changes) and Commit then Push at the end (share yours). Never delete the hidden .git folder — it contains the entire repository history.',
+      'The mandated loop is Pull at the start of every session (get teammates\' changes) and Commit then Push at the end (share yours). Never delete the hidden .git folder - it contains the entire repository history.',
   },
   {
     id: 'q61',
@@ -767,6 +767,6 @@ export const questions: readonly QuizQuestion[] = [
     options: ['df.describe()', 'df.count()', 'df.isna().sum()', 'df.dropna()'],
     answerIndex: 2,
     explanation:
-      'df.isna().sum() returns per-column missing counts — the essential first check before BRFSS recoding. df.count() counts NON-missing values, df.describe() gives summary statistics, and df.dropna() removes rows rather than counting anything.',
+      'df.isna().sum() returns per-column missing counts - the essential first check before BRFSS recoding. df.count() counts NON-missing values, df.describe() gives summary statistics, and df.dropna() removes rows rather than counting anything.',
   },
 ]

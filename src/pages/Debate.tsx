@@ -81,7 +81,7 @@ function GroupView({ g, accent }: { g: DebateGroup; accent: string }) {
         <div className="flex gap-3">
           <Quote size={18} className={`${accent} flex-shrink-0`} />
           <div>
-            <div className="text-xs font-mono uppercase tracking-wider text-ink-muted mb-1.5">Opening thesis — memorize this line</div>
+            <div className="text-xs font-mono uppercase tracking-wider text-ink-muted mb-1.5">Opening thesis - memorize this line</div>
             <p className="text-ink leading-relaxed italic">{g.thesis}</p>
           </div>
         </div>
@@ -93,7 +93,7 @@ function GroupView({ g, accent }: { g: DebateGroup; accent: string }) {
         <div className="flex gap-3">
           <Megaphone size={18} className={`${accent} flex-shrink-0`} />
           <div>
-            <div className="text-xs font-mono uppercase tracking-wider text-ink-muted mb-1.5">Closing line — rehearse out loud</div>
+            <div className="text-xs font-mono uppercase tracking-wider text-ink-muted mb-1.5">Closing line - rehearse out loud</div>
             <p className="text-ink leading-relaxed italic">{g.closing}</p>
           </div>
         </div>
@@ -184,7 +184,7 @@ export default function Debate() {
               <p className="text-sm text-ink-secondary leading-relaxed">{jury.stance}</p>
             </div>
             <section>
-              <h3 className="font-semibold text-ink mb-3 flex items-center gap-2"><Gavel size={16} className={juryAccent} /> Evaluation scorecard — draw this before the speeches</h3>
+              <h3 className="font-semibold text-ink mb-3 flex items-center gap-2"><Gavel size={16} className={juryAccent} /> Evaluation scorecard - draw this before the speeches</h3>
               <div className="bg-surface border border-edge rounded-lg overflow-hidden">
                 <table className="w-full text-sm">
                   <thead>
@@ -282,7 +282,7 @@ export default function Debate() {
             </section>
 
             <section>
-              <h3 className="font-semibold text-ink mb-3 flex items-center gap-2"><BookMarked size={16} className="text-glow" /> The stat card — memorize</h3>
+              <h3 className="font-semibold text-ink mb-3 flex items-center gap-2"><BookMarked size={16} className="text-glow" /> The stat card - memorize</h3>
               <div className="grid sm:grid-cols-2 gap-3">
                 {statCard.map(s => (
                   <div key={s.label} className="bg-surface border border-edge rounded-lg px-4 py-3.5">
@@ -300,7 +300,7 @@ export default function Debate() {
                 {vocab.map(v => (
                   <div key={v.term} className="bg-surface border border-edge rounded-lg px-4 py-3 text-sm">
                     <span className="text-ink font-medium">{v.term}</span>
-                    <span className="text-ink-muted"> — {v.meaning}</span>
+                    <span className="text-ink-muted"> - {v.meaning}</span>
                   </div>
                 ))}
               </div>
@@ -326,7 +326,7 @@ export default function Debate() {
     <div className="max-w-4xl mx-auto px-6 py-12">
       <div className="mb-8 animate-fade-in">
         <h1 className="text-3xl font-bold text-ink mb-2">Debate Trainer</h1>
-        <p className="text-ink-secondary">Ageing as burden vs ageing as resource — prepare all three roles; you won't know yours until class.</p>
+        <p className="text-ink-secondary">Ageing as burden vs ageing as resource - prepare all three roles; you won't know yours until class.</p>
       </div>
       <div className="flex flex-wrap gap-2 mb-8">
         {tabs.map(({ id, label, icon: Icon }) => (
