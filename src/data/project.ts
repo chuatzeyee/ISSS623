@@ -83,17 +83,23 @@ export const topicOptions: readonly BrfssTopicOption[] = [
       'PHYSHLTH',
       'MENTHLTH',
       'POORHLTH',
-      '_AGEG5YR',
-      'EDUCA',
-      'INCOME3',
+      'CHECKUP1',
+      'MEDCOST1',
+      '_AGE80',
+      '_EDUCAG',
+      '_INCOMG1',
       'EMPLOY1',
       'DIABETE4',
-      'PRIMINSR',
+      '_MICHD',
+      '_SMOKER3',
+      '_TOTINDA',
+      '_HLTHPL2',
+      '_BMI5CAT',
     ],
     literature:
       'Jiang, Hesser & Williams (2006, Health Qual Life Outcomes 4:14) - Rhode Island 2002 BRFSS linking HRQOL indicators (fair/poor health, physically/mentally unhealthy days, activity limitation) to demographics, health behaviours and risks; see also Moriarty, Zack & Kobau (2003) on the CDC Healthy Days measures.',
     whyItMatters:
-      'Health-related quality of life is the CDC’s core population health surveillance construct; predicting high burden lets groups combine predictors across demographics, behaviours, access, chronic conditions and socioeconomic position. All candidate variable names must still be verified against the 2024 BRFSS codebook before the proposal.',
+      'Health-related quality of life is the CDC’s core population health surveillance construct; predicting high burden lets groups combine predictors across demographics, behaviours, access, chronic conditions and socioeconomic position. Variables listed here match the header of the prof-supplied brfss2024_topic_a.csv (457,670 respondents, 29 columns).',
   },
   {
     id: 'B',
@@ -103,25 +109,31 @@ export const topicOptions: readonly BrfssTopicOption[] = [
     outcomes: [
       'Frequent mental distress (MENTHLTH ≥14 days)',
       'Daily or near-daily marijuana use (optional module - availability varies by state)',
-      'Heavy or frequent alcohol use (ALCDAY4-derived)',
-      'Current daily smoking (SMOKDAY2)',
+      'Heavy drinking (_RFDRHV9) or binge drinking (_RFBING6) calculated flags',
+      'Current smoking (_SMOKER3) or current e-cigarette use (_CURECI3)',
     ],
     variables: [
       'MENTHLTH',
-      'SMOKDAY2',
-      'ALCDAY4',
+      '_SMOKER3',
+      '_CURECI3',
+      '_RFBING6',
+      '_RFDRHV9',
+      'DEAF',
+      'BLIND',
+      'DECIDE',
+      'DIFFWALK',
+      'DIFFALON',
       '_AGEG5YR',
-      'EDUCA',
-      'INCOME3',
+      '_EDUCAG',
+      '_INCOMG1',
       'EMPLOY1',
       'MEDCOST1',
-      'PRIMINSR',
-      'DIABETE4',
+      '_HLTHPL2',
     ],
     literature:
       'Parekh & Fahim (2021, Drug and Alcohol Dependence 225:108789) - pooled 2016–2019 BRFSS; logistic regression, decision tree, random forest and Naive Bayes to predict daily marijuana use. Also Cree et al. (2020, MMWR 69(36)) on frequent mental distress by disability status.',
     whyItMatters:
-      'Substance use is associated with mental health, behavioural risk factors, healthcare access, social position and chronic disease burden, and Parekh & Fahim provide a direct methodological precedent for respondent-level BRFSS ML. Caution: marijuana questions sit in state-dependent optional modules, so confirm availability and every variable name in the 2024 codebook first.',
+      'Substance use is associated with mental health, behavioural risk factors, healthcare access, social position and chronic disease burden, and Parekh & Fahim provide a direct methodological precedent for respondent-level BRFSS ML. Caution: marijuana questions sit in state-dependent optional modules and are NOT in the pre-extracted topic B file - the supplied outcome set centres on MENTHLTH plus smoking/vaping/drinking calculated flags; extract module fields yourself if you want them.',
   },
   {
     id: 'C',
@@ -130,39 +142,42 @@ export const topicOptions: readonly BrfssTopicOption[] = [
     outcomes: [
       'No routine check-up in the past year (CHECKUP1)',
       'Cost-related barrier to seeing a doctor (MEDCOST1)',
-      'No recent dental visit',
-      'No recent flu vaccination (FLUSHOT7)',
+      'No recent dental visit (_DENVST3)',
+      'No recent flu vaccination (FLUSHOT7 - NOT in the pre-extracted topic C file; extract it yourself with BRFSS_Extraction.ipynb)',
     ],
     variables: [
       'CHECKUP1',
       'MEDCOST1',
-      'FLUSHOT7',
-      'PRIMINSR',
+      '_DENVST3',
+      'PRIMINS2',
+      'PERSDOC3',
+      '_HLTHPL2',
       '_AGEG5YR',
-      'EDUCA',
-      'INCOME3',
+      '_EDUCAG',
+      '_INCOMG1',
       'EMPLOY1',
       'GENHLTH',
       'DIABETE4',
+      '_URBSTAT',
     ],
     literature:
       'Clark et al. (2021, J Gen Intern Med 36(5):1181–1188) - machine-learning models predicting self-rated health from BRFSS, stratified by age, race/ethnicity and sex; a methodological precedent for respondent-level prediction with health-equity framing.',
     whyItMatters:
-      'Gaps in preventive care and access flag populations at risk of late diagnosis and higher downstream acute-care cost - the "move care left" argument from Lecture 1. Insurance (PRIMINSR), cost barriers and socioeconomic variables make this a natural access-equity story. Verify every candidate variable against the 2024 codebook (names and coding change between BRFSS years).',
+      'Gaps in preventive care and access flag populations at risk of late diagnosis and higher downstream acute-care cost - the "move care left" argument from Lecture 1. Insurance (PRIMINS2 - note the 2024 name; older papers say PRIMINSR), cost barriers and socioeconomic variables make this a natural access-equity story. Variables listed here are verified against the header of the prof-supplied brfss2024_topic_c.csv.',
   },
 ]
 
 // ── Project playbook (brief sections 6–9 + suggested workflow) ──────
 export const steps: readonly ProjectStep[] = [
   {
-    title: 'Download the 2024 BRFSS data and codebook',
+    title: 'Get the data - the prof now supplies everything (v3 "Project Guidance" slide)',
     detail:
-      'BRFSS is a CDC + US states/territories telephone survey of health risk behaviours, chronic conditions, healthcare access and preventive service use. Get the combined landline + cell phone dataset and, critically, the 2024 Codebook (variable names, value labels, skip logic).',
+      'BRFSS is a CDC + US states/territories telephone survey of health risk behaviours, chronic conditions, healthcare access and preventive service use. The v3 slides added a Project Guidance page: dataset, codebook, a parsed variable dictionary, per-topic pre-extracted CSVs and sample extraction code are all provided.',
     actions: [
-      'Go to the CDC 2024 annual data page and download LLCP2024ASC.zip (ASCII, ~41.5 MB, fixed record length 2,111 positions)',
-      'Download the 2024 BRFSS Codebook (ZIP, ~3 MB) and the Calculated Variables PDF',
-      'Run the course repo notebook "Read BRFSS ASCII file.ipynb" to generate brfss2024_variable_dictionary.csv and LLCP2024_sample.csv',
-      'Remove nrows=50 in the pd.read_fwf call to load the full dataset: expect 457,670 rows and 297 columns',
+      'Download LLCP2024ASC.zip from the CDC (41.5 MB zip - extracts to a 922 MB fixed-width ASCII file; never commit or email the extracted file)',
+      'Get the codebook: codebook24_llcp-v2-508.zip (HTML inside) - or use the prof’s parsed brfss2024_variable_dictionary.csv (variable, label, column positions, type)',
+      'Start from the pre-extracted topic files in the course repo (Lecture 1 folder): brfss2024_topic_a.csv (29 cols), brfss2024_topic_b.csv (33 cols), brfss2024_topic_c.csv (37 cols) - each with all 457,670 respondents',
+      'Study BRFSS_Extraction.ipynb (fixed-width parsing driven by the variable dictionary) so you can extract EXTRA fields beyond the suggested ones - the slide says "You may go beyond these suggestions"',
       'Do NOT submit the full raw dataset - create and document a smaller working dataset instead',
     ],
   },
@@ -370,6 +385,18 @@ export const finalRubric: readonly RubricRow[] = [
 
 // ── Key resources ───────────────────────────────────────────────────
 export const resources: readonly ResourceLink[] = [
+  {
+    label: 'LLCP2024ASC.zip - the dataset the prof asked you to download (41.5 MB zip, extracts to 922 MB ASCII)',
+    url: 'https://www.cdc.gov/brfss/annual_data/2024/files/LLCP2024ASC.zip',
+  },
+  {
+    label: '2024 codebook zip (HTML file inside) - codebook24_llcp-v2-508.zip',
+    url: 'https://www.cdc.gov/brfss/annual_data/2024/zip/codebook24_llcp-v2-508.zip',
+  },
+  {
+    label: 'BRFSS_Extraction.ipynb - prof’s sample extraction code (also produces the topic A/B/C CSVs)',
+    url: 'https://github.com/ISSS623-AHA/ISSS623_2024/blob/main/Lecture%201/BRFSS_Extraction.ipynb',
+  },
   {
     label: 'CDC BRFSS index (survey overview and data portal)',
     url: 'https://www.cdc.gov/brfss/index.html',

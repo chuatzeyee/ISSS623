@@ -769,4 +769,56 @@ export const questions: readonly QuizQuestion[] = [
     explanation:
       'df.isna().sum() returns per-column missing counts - the essential first check before BRFSS recoding. df.count() counts NON-missing values, df.describe() gives summary statistics, and df.dropna() removes rows rather than counting anything.',
   },
+  {
+    id: 'q62',
+    topic: 'BRFSS Project',
+    prompt:
+      'Per the v3 Project Guidance slide, which file is the official 2024 BRFSS dataset the class should download, and what should you expect after extraction?',
+    options: [
+      'LLCP2024XPT.zip - extracts to a 50 MB SAS transport file',
+      'brfss2024_topic_a.csv - the complete raw survey',
+      'LLCP2024ASC.zip (41.5 MB) - extracts to a ~922 MB fixed-width ASCII file',
+      'codebook24_llcp-v2-508.zip - extracts to the full dataset in HTML',
+    ],
+    answerIndex: 2,
+    explanation:
+      'The Project Guidance slide points to LLCP2024ASC.zip (41.5 MB) and warns it extracts to a 922 MB ASCII file. The codebook zip contains the HTML codebook, not data; the topic CSVs are pre-extracted subsets, not the raw survey.',
+  },
+  {
+    id: 'q63',
+    topic: 'BRFSS Project',
+    prompt: 'What do the prof-supplied files brfss2024_topic_a/b/c.csv contain?',
+    options: [
+      'Random 10% samples of respondents for quick prototyping',
+      'All 457,670 respondents with a suggested column subset per topic, extracted via BRFSS_Extraction.ipynb',
+      'Nationally weighted estimates ready for population-level claims',
+      'Only complete cases with no missing, refused or skipped responses',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Each topic CSV holds every 2024 respondent (457,670 rows) with the suggested fields for that topic (A: 29, B: 33, C: 37 columns), produced by the extraction notebook. They are unweighted and still contain 7/77, 9/99 and blank codes - your group must still recode and handle missingness, and may extract extra fields.',
+  },
+  {
+    id: 'q64',
+    topic: 'Analytics & AI',
+    prompt: 'Which statement is one of the three Key Takeaways closing the v3 Session 1 deck?',
+    options: [
+      'Healthcare data science must start with the dataset, then find a matching problem',
+      'Survey weights are essential for all healthcare analytics',
+      'Deep learning should be the default first model in healthcare',
+      'Healthcare data science must start with the healthcare problem, not the dataset',
+    ],
+    answerIndex: 3,
+    explanation:
+      'The three takeaways: start with the healthcare problem (not the dataset); learning health systems use data to continuously improve care; the data science value chain is an end-to-end process. Option A inverts the first takeaway.',
+  },
+  {
+    id: 'q65',
+    topic: 'BRFSS Project',
+    prompt: 'In the 2024 BRFSS, the health-insurance source variable appearing in the topic C extract is named:',
+    options: ['PRIMINS2', 'PRIMINSR', 'HLTHPLN1', 'INSURANCE'],
+    answerIndex: 0,
+    explanation:
+      'Variable names change between BRFSS years: 2024 uses PRIMINS2 (older literature and earlier years say PRIMINSR or HLTHPLN1). The calculated flag _HLTHPL2 also captures having any coverage - always confirm names in the 2024 codebook or variable dictionary.',
+  },
 ]

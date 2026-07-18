@@ -229,6 +229,8 @@ export const sessions: readonly Session[] = [
           'NEHR = "One Patient, One Health Record": a national record following the patient across GP → hospital → community hospital; benefits are coordination, safety and efficiency.',
         ],
         tip: 'Registry name-drops score: PAROS for resuscitation outcomes, SingCLOUD for cardiac. Knowing what each registry covers is exactly the kind of detail quizzes reward.',
+        important:
+          'v3 deck update: the detailed data-source description tables, the open-data slide (data.gov.sg, MIMIC) and the ASEAN challenges slide were REMOVED from the current slides. Learn the framework (patient-provider / external / research) and NEHR well; treat vendor lists and MIMIC as background only.',
         relatedTerms: ['NEHR', 'EHR', 'Disease registry', 'PAROS', 'SingCLOUD', 'PhysioNet'],
       },
     ],
@@ -317,6 +319,20 @@ export const sessions: readonly Session[] = [
         tip: 'Quiz scope is anchored to what appeared in the lecture slides - prioritise reading sections that overlap with Segment 2 and 3 slide content.',
         relatedTerms: ['Aliferis & Simon', 'Validation', 'Learning Health System'],
       },
+      {
+        title: 'Key Takeaways of Session 1 (new closing slide in v3)',
+        summary:
+          'The v3 deck ends with a three-line Key Takeaways slide - the instructor’s own summary of what Session 1 is about. Perfect material for wrap-up comments in class and for quiz stems.',
+        points: [
+          '1. Healthcare data science must start with the HEALTHCARE PROBLEM, not the dataset.',
+          '2. LEARNING HEALTH SYSTEMS use data to continuously improve care.',
+          '3. The DATA SCIENCE VALUE CHAIN is an end-to-end process.',
+          'Takeaway 1 is also the rubric logic of the group project: problem framing and motivation are graded before any modelling.',
+          'Takeaway 3 echoes the clinical-grade lifecycle: value comes from the whole chain (data design → modeling → validation → monitoring), not a single model.',
+        ],
+        tip: 'If you get one closing comment in class, restate a takeaway in your own words with a concrete example - e.g. "we picked the outcome before opening the CSV, because the problem comes before the dataset."',
+        relatedTerms: ['Learning Health System', 'Data science value chain', 'Clinical-grade AI'],
+      },
     ],
   },
   {
@@ -332,8 +348,9 @@ export const sessions: readonly Session[] = [
           'Open a notebook: colab.research.google.com → File → Open Notebook → GitHub tab → paste repo URL https://github.com/ISSS623-AHA/ISSS623_2024 → open Lecture 1/Lecture_1.ipynb.',
           'Connect → Connect to hosted runtime (top right); a green tick with RAM/Disk bars means connected.',
           'Run cells top-to-bottom with ▶ or Ctrl-Enter; the bracketed number like [3] shows execution order.',
-          'Mount Google Drive: Files panel → Mount Drive icon → run the generated cell (from google.colab import drive; drive.mount("/content/drive")) → authorise → confirm drive/MyDrive appears.',
+          'Mount Google Drive (simplified in v3): run the drive.mount("/content/drive") cell → follow the link to connect your Google account → use your files under drive → MyDrive.',
           'Output files written by the notebook land in /content/ (ephemeral unless saved to Drive).',
+          'v3 adds a save-outputs pattern: os.makedirs("/content/drive/My Drive/ISSS623/Lecture_1_Outputs", exist_ok=True) then !mv brfss2024_variable_dictionary.csv "{drive_path}" - move outputs into Drive so they survive runtime recycling.',
           'Try the Gemini button (✦ icon) - the instructor explicitly demos "learning in the era of GenAI"; ask it to explain a code block.',
         ],
         tip: 'Run the whole notebook end-to-end the night before class. Stale runtimes and out-of-order execution ([5] before [2]) are the two most common in-class failures.',
