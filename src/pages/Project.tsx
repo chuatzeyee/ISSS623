@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { CalendarDays, ChevronDown, Users, Ruler, ClipboardList, Link2 } from 'lucide-react'
-import { deadlines, steps, scope, topicOptions, roles, proposalRubric, finalRubric, resources } from '../data/project'
+import { CalendarDays, ChevronDown, Users, Ruler, ClipboardList, Link2, BrainCircuit, XCircle } from 'lucide-react'
+import { deadlines, steps, scope, topicOptions, roles, proposalRubric, finalRubric, resources, modellingPlan } from '../data/project'
 
 function StepCard({ n, title, detail, actions }: { n: number; title: string; detail: string; actions: readonly string[] }) {
   const [open, setOpen] = useState(false)
@@ -112,6 +112,39 @@ export default function Project() {
         <div className="space-y-3">
           {steps.map((s, i) => <StepCard key={s.title} n={i + 1} {...s} />)}
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="font-semibold text-ink mb-3 flex items-center gap-2"><BrainCircuit size={16} className="text-glow" /> Modelling plan</h2>
+        <div className="space-y-3 mb-4">
+          {modellingPlan.lineup.map(m => (
+            <div key={m.model} className="bg-surface border border-edge rounded-lg px-5 py-4">
+              <div className="flex items-baseline justify-between gap-3 mb-1">
+                <span className="font-semibold text-ink">{m.model}</span>
+                <span className="text-xs font-mono text-glow bg-glow-dim px-2 py-0.5 rounded-full border border-glow/10 whitespace-nowrap">{m.role}</span>
+              </div>
+              <p className="text-sm text-ink-secondary leading-relaxed">{m.notes}</p>
+            </div>
+          ))}
+        </div>
+        <div className="text-sm text-ink-muted mb-2">Methodology choices that score marks</div>
+        <ol className="space-y-2.5 mb-4">
+          {modellingPlan.methodology.map((t, i) => (
+            <li key={i} className="flex gap-3 text-sm text-ink-secondary bg-surface border border-edge rounded-lg px-4 py-3 leading-relaxed">
+              <span className="font-mono text-glow flex-shrink-0">{i + 1}.</span>
+              <span>{t}</span>
+            </li>
+          ))}
+        </ol>
+        <div className="text-sm text-ink-muted mb-2">What NOT to do</div>
+        <ul className="space-y-2.5">
+          {modellingPlan.donts.map((t, i) => (
+            <li key={i} className="flex gap-3 text-sm text-ink-secondary bg-wrong-dim/30 border border-wrong/15 rounded-lg px-4 py-3 leading-relaxed">
+              <XCircle size={15} className="text-wrong flex-shrink-0 mt-0.5" />
+              <span>{t}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mb-10">

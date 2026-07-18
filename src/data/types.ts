@@ -153,3 +153,15 @@ export interface ResourceLink {
   readonly label: string
   readonly url: string
 }
+
+export interface ModelPlanEntry {
+  readonly model: string
+  readonly role: string
+  readonly notes: string
+}
+
+export interface ModellingPlan {
+  readonly lineup: readonly ModelPlanEntry[]
+  readonly methodology: readonly string[]
+  readonly donts: readonly string[]
+}

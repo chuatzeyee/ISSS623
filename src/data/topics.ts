@@ -376,6 +376,28 @@ export const sessions: readonly Session[] = [
         relatedTerms: ['GitHub', 'Commit', 'Push', 'Pull', 'Clone', 'Repository'],
       },
       {
+        title: 'Python DEFINITIONS - the quiz tests terms, not coding (prof hint)',
+        summary:
+          'The prof indicated the class quiz covers DEFINITIONS of terms like "list" and "tuple" and functions like info() and describe() - not writing code. Know what each construct IS and how it contrasts with its neighbours.',
+        points: [
+          'List: ordered, CHANGEABLE (mutable), square brackets [25, 40, 60]; access by index (ages[0], ages[-1]); extend with append().',
+          'Tuple: ordered, UNCHANGEABLE (immutable), parentheses ("P001", 65, "Male"); use when data must not be modified. Mutability is THE list-vs-tuple contrast.',
+          'Dictionary: key-value pairs in curly braces {"age": 65}; access by KEY (patient["age"]), not position.',
+          'pandas Series: ONE-dimensional labelled array (a single column); DataFrame: TWO-dimensional table of rows x columns.',
+          'head() shows the first rows (the data); info() shows STRUCTURE (rows/cols, non-null counts, dtypes); describe() shows SUMMARY STATISTICS (count, mean, std, min, 25/50/75 percentiles, max). Prof explicitly called out info() and describe().',
+          'isna().sum() counts missing per column; fillna(median) replaces missing; count() counts NON-missing - know which does which.',
+          'List comprehension: one-line new-list syntax [age for age in ages if age >= 60]; conditional form classifies elements.',
+          'for loop iterates over a sequence; while loop repeats while a condition is true (and needs the condition to change, else infinite).',
+          'Function (def): named reusable block with parameters and a return value; defining it does not run it - calling does.',
+          'CSV: plain-text comma-separated rows; Excel (.xlsx): multiple sheets + formatting; notebook (.ipynb): code cells + outputs + text.',
+          'groupby = split-apply-combine: split by key, aggregate per group (.agg), combine into a summary table; reset_index() flattens.',
+        ],
+        tip: 'Study the CONTRASTS, not the syntax: list vs tuple (mutability), dict vs list (key vs index), Series vs DataFrame (1-D vs 2-D), info() vs describe() (structure vs statistics), isna() vs count() (missing vs non-missing), for vs while (sequence vs condition).',
+        important:
+          'The prof explicitly said the quiz may NOT cover Python coding - it covers what the terms MEAN. If you can fill in "ordered + changeable = ___" and "structure vs statistics = info() vs describe()", you are prepared.',
+        relatedTerms: ['List', 'Tuple', 'Dictionary', 'pandas Series', 'DataFrame', 'info() function', 'describe() function'],
+      },
+      {
         title: 'Python for health data: the 12 notebook topics',
         summary:
           'Lecture_1.ipynb covers 12 topics from variables to groupby aggregation. The self-check standard: can you write each pattern without looking it up.',

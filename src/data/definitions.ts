@@ -539,4 +539,160 @@ export const definitions: readonly Definition[] = [
     category: 'Project & Tools',
     related: ['BRFSS'],
   },
+
+  // ── Python concept definitions (quiz tests TERMS, not coding) ─────
+  {
+    term: 'Variable (Python)',
+    definition:
+      'A named container that stores a value which can be reused and changed. Variables can hold different data types: text (string), numbers (integer, float) and Booleans (True/False) - e.g. patient_id = "P001", blood_pressure = 135, has_diabetes = True.',
+    category: 'Project & Tools',
+    related: ['List', 'Dictionary'],
+  },
+  {
+    term: 'List',
+    definition:
+      'An ORDERED and CHANGEABLE (mutable) collection of items, written with square brackets, e.g. ages = [25, 40, 60, 75]. Items are accessed by position (ages[0] is the first, ages[-1] the last) and can be added with append(). The go-to structure when a sequence must grow or change.',
+    category: 'Project & Tools',
+    related: ['Tuple', 'List comprehension', 'pandas Series'],
+  },
+  {
+    term: 'Tuple',
+    definition:
+      'An ORDERED but UNCHANGEABLE (immutable) collection, written with parentheses, e.g. patient_record = ("P001", 65, "Male"). Use when data should not be modified after creation - the key contrast with a list, which is mutable.',
+    category: 'Project & Tools',
+    related: ['List', 'Dictionary'],
+  },
+  {
+    term: 'Dictionary',
+    definition:
+      'A collection of KEY-VALUE pairs written with curly braces, e.g. patient = {"patient_id": "P001", "age": 65}. Values are accessed by key (patient["age"]), not by position - unlike lists and tuples, which are accessed by index.',
+    category: 'Project & Tools',
+    related: ['List', 'Tuple', 'DataFrame'],
+  },
+  {
+    term: 'pandas Series',
+    definition:
+      'A ONE-dimensional labelled array from the pandas library, often one column of a DataFrame, e.g. pd.Series([25, 40, 60, 75]). Supports vectorised statistics like .mean() directly.',
+    category: 'Project & Tools',
+    related: ['DataFrame', 'List'],
+  },
+  {
+    term: 'DataFrame',
+    definition:
+      'The pandas TWO-dimensional table of rows and columns - the standard structure for health datasets like the BRFSS topic CSVs. Inspected with head() / info() / describe(); each column is a Series.',
+    category: 'Project & Tools',
+    related: ['pandas Series', 'groupby', 'CSV'],
+  },
+  {
+    term: 'List comprehension',
+    definition:
+      'A concise one-line syntax for building a new list from an existing sequence, optionally with a condition, e.g. [age for age in ages if age >= 60]. The conditional form ["Older adult" if a >= 65 else "Adult" for a in ages] classifies every element.',
+    category: 'Project & Tools',
+    related: ['List', 'Conditional (if/elif/else)'],
+  },
+  {
+    term: 'Conditional (if/elif/else)',
+    definition:
+      'Control-flow statements that run different code depending on whether conditions are true - e.g. a BMI classifier: if bmi < 18.5 → underweight, elif bmi < 25 → normal, elif bmi < 30 → overweight, else → obese. elif chains are evaluated top-down and stop at the first true branch.',
+    category: 'Project & Tools',
+    related: ['For loop', 'Function'],
+  },
+  {
+    term: 'For loop',
+    definition:
+      'Iterates over each item in a sequence (e.g. for age in ages: print(age)), running the indented block once per item. Contrast with the while loop, which repeats as long as a condition remains true and needs an explicit counter/condition update to stop.',
+    category: 'Project & Tools',
+    related: ['While loop', 'List comprehension'],
+  },
+  {
+    term: 'While loop',
+    definition:
+      'Repeats a block as long as its condition stays true, e.g. while count <= 5. Requires the loop body to change the condition (count = count + 1) or it runs forever - the classic infinite-loop mistake.',
+    category: 'Project & Tools',
+    related: ['For loop'],
+  },
+  {
+    term: 'Function (Python)',
+    definition:
+      'A named, reusable block defined with def that takes inputs (parameters) and usually returns a result - e.g. def calculate_bmi(weight_kg, height_m): return weight_kg / height_m ** 2. Functions let you write logic once and call it many times.',
+    category: 'Project & Tools',
+    related: ['Conditional (if/elif/else)'],
+  },
+  {
+    term: 'CSV file',
+    definition:
+      'Comma-Separated Values - a plain-text format storing tabular data one row per line with commas between fields. Read/written in pandas with pd.read_csv() and df.to_csv(index=False). Contrast: text files store unstructured text; Excel (.xlsx) supports multiple sheets and formatting.',
+    category: 'Project & Tools',
+    related: ['DataFrame', 'Excel file'],
+  },
+  {
+    term: 'Excel file',
+    definition:
+      'A spreadsheet format (.xlsx) supporting multiple sheets and cell formatting, handled in pandas with pd.read_excel() and df.to_excel(index=False). Heavier than CSV; CSV is preferred for plain data exchange.',
+    category: 'Project & Tools',
+    related: ['CSV file'],
+  },
+  {
+    term: 'head() function',
+    definition:
+      'DataFrame inspection function returning the FIRST rows of the table (default 5) - a quick visual peek at the actual data values. First of the three standard inspection calls: head() shows the data, info() shows the structure, describe() shows the statistics.',
+    category: 'Project & Tools',
+    related: ['info() function', 'describe() function', 'DataFrame'],
+  },
+  {
+    term: 'info() function',
+    definition:
+      'DataFrame inspection function summarising STRUCTURE: number of rows and columns, each column\'s name, count of non-null (non-missing) values, and data type (dtype), plus memory usage. It answers "what columns do I have, how complete are they, and what types are they?" - it does NOT compute statistics. (Prof flagged this as quiz material.)',
+    category: 'Project & Tools',
+    related: ['head() function', 'describe() function', 'isna()'],
+  },
+  {
+    term: 'describe() function',
+    definition:
+      'DataFrame inspection function computing SUMMARY STATISTICS for numeric columns: count, mean, standard deviation, minimum, 25th/50th/75th percentiles (the 50th = median) and maximum. It answers "how are my numeric values distributed?" - structure and dtypes are info()\'s job, not describe()\'s. (Prof flagged this as quiz material.)',
+    category: 'Project & Tools',
+    related: ['head() function', 'info() function'],
+  },
+  {
+    term: 'isna()',
+    definition:
+      'Pandas method flagging missing values; chained as df.isna().sum() it counts missing values per column - the essential first check before BRFSS recoding. Contrast: df.count() counts NON-missing values; dropna() removes rows; fillna() replaces missing values (e.g. with the median).',
+    category: 'Project & Tools',
+    related: ['info() function', 'fillna()'],
+  },
+  {
+    term: 'fillna()',
+    definition:
+      'Pandas method replacing missing values with a specified value, commonly the column median (robust to outliers) or mean, e.g. df["age"].fillna(df["age"].median()). Part of the standard cleaning toolkit alongside isna(), dropna() and rename().',
+    category: 'Project & Tools',
+    related: ['isna()'],
+  },
+  {
+    term: 'groupby',
+    definition:
+      'The pandas split-apply-combine operation: groupby() SPLITS rows into groups by a key, an aggregation function (mean, sum, count via .agg()) SUMMARISES each group, and the results are combined into a table - e.g. df.groupby("gender")["age"].mean(). reset_index() flattens the result back to a normal DataFrame.',
+    category: 'Project & Tools',
+    related: ['DataFrame', 'pandas Series'],
+  },
+  {
+    term: 'Jupyter/Colab notebook',
+    definition:
+      'An interactive document mixing runnable code cells, output and formatted text. Google Colab hosts notebooks in the browser on a free cloud runtime; the bracketed number beside a cell (e.g. [3]) shows execution ORDER, and out-of-order execution is a classic source of bugs.',
+    category: 'Project & Tools',
+    related: ['Google Colab', 'Runtime'],
+  },
+  {
+    term: 'Runtime (Colab)',
+    definition:
+      'The cloud virtual machine that executes a Colab notebook. It is EPHEMERAL: files in /content/ disappear when the runtime recycles, so outputs must be saved to mounted Google Drive. "Connect to hosted runtime" attaches the notebook to this VM.',
+    category: 'Project & Tools',
+    related: ['Jupyter/Colab notebook', 'Google Colab'],
+  },
+  {
+    term: 'Mutable vs immutable',
+    definition:
+      'Mutable objects can be changed in place after creation (lists, dictionaries, DataFrames); immutable objects cannot (tuples, strings, numbers). This is THE distinguishing feature between lists (mutable) and tuples (immutable) - a favourite definition-quiz contrast.',
+    category: 'Project & Tools',
+    related: ['List', 'Tuple'],
+  },
 ] satisfies readonly Definition[]

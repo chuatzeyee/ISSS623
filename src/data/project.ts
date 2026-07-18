@@ -1,6 +1,7 @@
 import type {
   BrfssTopicOption,
   DeadlineItem,
+  ModellingPlan,
   ProjectRole,
   ProjectStep,
   ResourceLink,
@@ -418,3 +419,41 @@ export const resources: readonly ResourceLink[] = [
     url: 'https://desktop.github.com/',
   },
 ]
+
+// ── Modelling plan (grounded in scope rules + measured data) ────────
+export const modellingPlan: ModellingPlan = {
+  lineup: [
+    {
+      model: '1 · Logistic regression',
+      role: 'Mandatory baseline',
+      notes:
+        'Report odds ratios with 95% CIs. This is the interpretability anchor: "uninsured respondents (PRIMINS2=88) have X times the odds of no check-up." Use class_weight="balanced" and max_iter=2000.',
+    },
+    {
+      model: '2 · Decision tree',
+      role: 'ML model 1 - interpretability',
+      notes:
+        'Keep it shallow (depth 4-5) and PLOT it - the brief explicitly names decision trees for interpretability, and the tree diagram is the one picture a non-technical audience understands in the presentation.',
+    },
+    {
+      model: '3 · Random forest or gradient boosting',
+      role: 'ML model 2 - performance ceiling',
+      notes:
+        'With ~450k rows use sklearn HistGradientBoostingClassifier (fast, handles NaN natively) or RandomForestClassifier(n_jobs=-1). Stop there - neural networks are explicitly discouraged without prior experience.',
+    },
+  ],
+  methodology: [
+    'Stratified 80/20 train/test split with a fixed random_state, split BEFORE fitting anything - leakage is the classic mistake graders look for.',
+    'Encoding: one-hot the nominal variables (PRIMINS2, EMPLOY1, _RACEGR3, MARITAL); keep ordinal variables as ordered integers (_EDUCAG, _INCOMG1, _AGEG5YR); binary flags stay 0/1 after the 7/9 → missing recode.',
+    'Class imbalance: an 18% event rate is mild - do NOT reach for SMOTE. Set class_weight="balanced" in logistic/tree and justify in one sentence. Simple and defensible.',
+    'Evaluation - one table for all models: AUC-ROC (primary), sensitivity, specificity, precision, F1 at a stated threshold, plus a calibration curve for the best model. State the rationale: in a screening/outreach framing, missing a person with a care gap (a false negative) is the costly error, so sensitivity matters more than raw accuracy.',
+    'Interpretation crosswalk (where the 4% interpretation criterion is won): put logistic odds ratios side-by-side with RF/GBM permutation importance and check they tell a consistent story - insurance, income, personal doctor and cost barrier should dominate. A variable high in ML but null in logistic hints at non-linearity or interaction; one paragraph on that reads as sophistication. SHAP summary plot is an optional stretch goal.',
+    'The test set is touched exactly once, at the end, for the final metrics table.',
+  ],
+  donts: [
+    'No survey weights - state it as a limitation ("results describe our analytic sample, not the US population"), not a choice you forgot.',
+    'No heavy hyperparameter tuning - defaults or a small grid plus one sentence; the brief’s own language is "emphasis is on understanding, not maximising accuracy".',
+    'No causal claims - "predicts" / "is associated with", never "causes".',
+    'No neural networks - explicitly not recommended without prior experience.',
+  ],
+}

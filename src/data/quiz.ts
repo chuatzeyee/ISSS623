@@ -821,4 +821,174 @@ export const questions: readonly QuizQuestion[] = [
     explanation:
       'Variable names change between BRFSS years: 2024 uses PRIMINS2 (older literature and earlier years say PRIMINSR or HLTHPLN1). The calculated flag _HLTHPL2 also captures having any coverage - always confirm names in the 2024 codebook or variable dictionary.',
   },
+
+  // ── Python definitions (quiz tests terms, not coding) ─────────────
+  {
+    id: 'q66',
+    topic: 'Python & Tools',
+    prompt: 'What is a list in Python?',
+    options: [
+      'An ordered, changeable (mutable) collection of items, written with square brackets',
+      'An ordered, unchangeable collection written with parentheses',
+      'A collection of key-value pairs written with curly braces',
+      'A two-dimensional table of rows and columns',
+    ],
+    answerIndex: 0,
+    explanation:
+      'Lists are ordered AND mutable: [25, 40, 60, 75], indexable (ages[0], ages[-1]) and extendable with append(). Parentheses = tuple (immutable), curly braces with key-value pairs = dictionary, two-dimensional table = DataFrame.',
+  },
+  {
+    id: 'q67',
+    topic: 'Python & Tools',
+    prompt: 'What is the key difference between a tuple and a list?',
+    options: [
+      'Tuples can only store numbers, lists can store any type',
+      'A tuple is unchangeable (immutable) after creation; a list can be modified',
+      'Tuples are unordered; lists are ordered',
+      'Tuples use square brackets; lists use parentheses',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Both are ordered and store any type; the difference is mutability. Tuples (parentheses) cannot be changed after creation - use them when data should not be modified, like a fixed patient record. The bracket claim is reversed: tuples use parentheses, lists use square brackets.',
+  },
+  {
+    id: 'q68',
+    topic: 'Python & Tools',
+    prompt: 'How are values accessed in a Python dictionary?',
+    options: [
+      'By numeric position, like items in a list',
+      'By key, e.g. patient["age"]',
+      'Only by looping through all items',
+      'With the get_value() function',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Dictionaries store key-value pairs in curly braces and are accessed by KEY (patient["age"] returns 65), unlike lists and tuples which are accessed by numeric index. That is the defining contrast between the three structures.',
+  },
+  {
+    id: 'q69',
+    topic: 'Python & Tools',
+    prompt: 'What does the pandas info() function tell you about a DataFrame?',
+    options: [
+      'Summary statistics: mean, standard deviation, min, percentiles, max',
+      'The first five rows of actual data values',
+      'Structure: rows/columns, each column\'s non-null count and data type (dtype)',
+      'The correlation between every pair of numeric columns',
+    ],
+    answerIndex: 2,
+    explanation:
+      'info() = STRUCTURE: dimensions, column names, non-null counts (revealing missingness) and dtypes. Statistics are describe()\'s job; the first rows are head()\'s; correlations come from corr(). The prof explicitly flagged info() vs describe() as quiz material.',
+  },
+  {
+    id: 'q70',
+    topic: 'Python & Tools',
+    prompt: 'What does the pandas describe() function produce?',
+    options: [
+      'Column names, non-null counts and data types',
+      'Count, mean, standard deviation, min, 25th/50th/75th percentiles and max for numeric columns',
+      'A written description of what each variable means, taken from the codebook',
+      'A plot of each numeric column\'s distribution',
+    ],
+    answerIndex: 1,
+    explanation:
+      'describe() = SUMMARY STATISTICS of numeric columns (the 50% row is the median). Structure/dtypes belong to info(), variable meanings live in the codebook, and plotting requires matplotlib - describe() outputs a table, not a chart.',
+  },
+  {
+    id: 'q71',
+    topic: 'Python & Tools',
+    prompt: 'What is a pandas Series?',
+    options: [
+      'A two-dimensional table of rows and columns',
+      'A one-dimensional labelled array, such as a single DataFrame column',
+      'A list that can only contain numbers',
+      'A sequence of DataFrames processed one after another',
+    ],
+    answerIndex: 1,
+    explanation:
+      'A Series is pandas\' ONE-dimensional labelled array - each DataFrame column is a Series - with vectorised methods like .mean(). The two-dimensional table is the DataFrame itself.',
+  },
+  {
+    id: 'q72',
+    topic: 'Python & Tools',
+    prompt: 'What is a list comprehension?',
+    options: [
+      'A built-in function that sorts and de-duplicates a list',
+      'A concise one-line syntax for creating a new list from a sequence, optionally with a condition',
+      'A method for documenting what a list contains',
+      'A loop that permanently modifies the original list in place',
+    ],
+    answerIndex: 1,
+    explanation:
+      'List comprehension builds a NEW list in one line: [age for age in ages if age >= 60] filters, and ["Older adult" if a >= 65 else "Adult" for a in ages] classifies. It replaces a multi-line for-loop with append(), and leaves the original list untouched.',
+  },
+  {
+    id: 'q73',
+    topic: 'Python & Tools',
+    prompt: 'What is the difference between a for loop and a while loop?',
+    options: [
+      'A for loop iterates over each item in a sequence; a while loop repeats as long as a condition is true',
+      'A for loop can run forever; a while loop always terminates',
+      'A while loop is just a faster version of a for loop',
+      'A for loop requires a counter variable; a while loop does not',
+    ],
+    answerIndex: 0,
+    explanation:
+      'For = iterate over a sequence (for age in ages); while = repeat while a condition holds (while count <= 5) and needs the body to update the condition or it loops forever. The counter claim is backwards - it is the while loop that typically needs an explicit counter.',
+  },
+  {
+    id: 'q74',
+    topic: 'Python & Tools',
+    prompt: 'In Python, what does a function defined with def do?',
+    options: [
+      'Runs code immediately when defined',
+      'Creates a named, reusable block that takes inputs and can return a result',
+      'Creates a new column in a DataFrame',
+      'Stores a collection of key-value pairs',
+    ],
+    answerIndex: 1,
+    explanation:
+      'def calculate_bmi(weight_kg, height_m): return weight_kg / height_m ** 2 defines reusable logic invoked later by calling calculate_bmi(70, 1.75). Definition does not execute the body - only calling does. Key-value storage is a dictionary.',
+  },
+  {
+    id: 'q75',
+    topic: 'Python & Tools',
+    prompt: 'What is a CSV file?',
+    options: [
+      'A spreadsheet format supporting multiple sheets and cell formatting',
+      'A plain-text tabular format with one row per line and commas separating fields',
+      'A binary format that only pandas can open',
+      'A format for storing Python code cells with their outputs',
+    ],
+    answerIndex: 1,
+    explanation:
+      'CSV = Comma-Separated Values: plain text, one row per line, commas between fields - read with pd.read_csv(). Multiple sheets and formatting describe Excel (.xlsx); code cells with outputs describe a notebook (.ipynb).',
+  },
+  {
+    id: 'q76',
+    topic: 'Python & Tools',
+    prompt: 'The pandas groupby() operation is best described as:',
+    options: [
+      'Sorting a DataFrame by one or more columns',
+      'Splitting rows into groups by a key, summarising each group with aggregation functions, and combining the results',
+      'Merging two DataFrames on a shared column',
+      'Removing duplicate rows from a DataFrame',
+    ],
+    answerIndex: 1,
+    explanation:
+      'groupby() is split-apply-combine: df.groupby("gender")["age"].mean() splits by gender, applies the mean, combines into a summary table (reset_index() flattens it). Sorting is sort_values(), merging is merge(), de-duplication is drop_duplicates().',
+  },
+  {
+    id: 'q77',
+    topic: 'Python & Tools',
+    prompt: 'Which objects in Python are IMMUTABLE (cannot be changed after creation)?',
+    options: [
+      'Lists and dictionaries',
+      'DataFrames and Series',
+      'Tuples and strings',
+      'All Python objects are mutable',
+    ],
+    answerIndex: 2,
+    explanation:
+      'Tuples, strings and numbers are immutable; lists, dictionaries and DataFrames are mutable (changeable in place). The mutable/immutable split is exactly the list-vs-tuple contrast the quiz loves.',
+  },
 ]
