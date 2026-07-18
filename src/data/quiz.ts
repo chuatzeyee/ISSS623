@@ -635,7 +635,7 @@ export const questions: readonly QuizQuestion[] = [
     ],
     answerIndex: 0,
     explanation:
-      'The proposal (due 18 Jul, worth 10% overall, max 2 pages excluding annexes) is graded: framing 2%, data feasibility & variables 3%, literature 2%, analysis plan 2%, roles 1%. Demonstrating codebook awareness in variable selection is therefore the single biggest scoring lever.',
+      'The proposal (due 25 Jul, worth 10% overall, max 2 pages excluding annexes) is graded: framing 2%, data feasibility & variables 3%, literature 2%, analysis plan 2%, roles 1%. Demonstrating codebook awareness in variable selection is therefore the single biggest scoring lever.',
   },
   {
     id: 'q52',

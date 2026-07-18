@@ -11,27 +11,27 @@ import type {
 // ── Assessment deadlines ────────────────────────────────────────────
 export const deadlines: readonly DeadlineItem[] = [
   {
-    date: '2026-07-11',
+    date: '2026-07-18',
     what: 'Mini structured debate on ageing - participation counts from this date (participation assessed Weeks 1–4)',
     weight: '15% (participation)',
   },
   {
-    date: '2026-07-18',
+    date: '2026-07-25',
     what: 'Group project proposal - max 2 pages excluding annexes: project question, public health motivation, literature context, outcome + predictors, planned models, role allocation',
     weight: '10%',
   },
   {
-    date: '2026-07-25',
+    date: '2026-08-01',
     what: 'Quiz 1 - covers healthcare landscape, health data ecosystem, and assigned readings (Aliferis & Simon ch.1 & 6, Liu et al. 2025)',
     weight: '20%',
   },
   {
-    date: '2026-08-08',
+    date: '2026-08-15',
     what: 'Quiz 2, plus final group presentation (20 minutes + 10 minutes Q&A, 8–10 slides recommended)',
     weight: '25% (Quiz 2) + presentation (part of 20% presentation & final)',
   },
   {
-    date: '2026-08-14',
+    date: '2026-08-21',
     what: 'Final submission - report (2,500–3,500 words), reproducible notebook, slides, collaterals - plus SPOT peer evaluation form',
     weight: '20% (final) + 10% (peer evaluation)',
   },
@@ -291,7 +291,7 @@ export const roles: readonly ProjectRole[] = [
   {
     role: 'Project and proposal lead',
     responsibility:
-      'Frames the research question, reviews the anchor literature, and writes the 2-page proposal due 18 Jul',
+      'Frames the research question, reviews the anchor literature, and writes the 2-page proposal due 25 Jul',
   },
   {
     role: 'Data preparation lead',

@@ -535,7 +535,7 @@ export const definitions: readonly Definition[] = [
   {
     term: 'SPOT peer evaluation',
     definition:
-      'The peer-evaluation framework worth 10% of the final grade (due 14 Aug): Supportive, Proactive, Openness and Thorough at 15% each, plus overall participation, quantity, quality and ideas at 10% each. Practically: be responsive on the group chat and hit internal deadlines.',
+      'The peer-evaluation framework worth 10% of the final grade (due 21 Aug): Supportive, Proactive, Openness and Thorough at 15% each, plus overall participation, quantity, quality and ideas at 10% each. Practically: be responsive on the group chat and hit internal deadlines.',
     category: 'Project & Tools',
     related: ['BRFSS'],
   },

@@ -50,7 +50,7 @@ export default function Quiz() {
     <div className="max-w-3xl mx-auto px-6 py-12">
       <div className="mb-8 animate-fade-in">
         <h1 className="text-3xl font-bold text-ink mb-2">Practice Quiz</h1>
-        <p className="text-ink-secondary">MCQs across every lecture topic. Quiz 1 is 25 Jul; Quiz 2 is 8 Aug - both proctored.</p>
+        <p className="text-ink-secondary">MCQs across every lecture topic. Quiz 1 is 1 Aug; Quiz 2 is 15 Aug - both proctored.</p>
       </div>
 
       <div className="flex flex-wrap items-center gap-1.5 mb-6">

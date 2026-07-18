@@ -45,7 +45,7 @@ export const sessions: readonly Session[] = [
       {
         title: 'The five memorize-cold Singapore statistics',
         summary:
-          'Five headline numbers quantify Singapore’s ageing and cost challenge. They anchor the debate on 11 Jul and are likely quiz material - know value, direction and source year.',
+          'Five headline numbers quantify Singapore’s ageing and cost challenge. They anchor the Session 1 debate (18 Jul) and are likely quiz material - know value, direction and source year.',
         points: [
           'Population aged 65+: 20.7% in 2025, projected 23.9% by 2030 - roughly 1 in 4 residents (population.gov.sg).',
           'Life expectancy at birth: 83.9 years (2025; Straits Times 2026).',
@@ -309,10 +309,10 @@ export const sessions: readonly Session[] = [
       {
         title: 'Trust and best practices in healthcare AI (Reading 1)',
         summary:
-          'Aliferis & Simon chapter 1 argues that healthcare AI/ML fails and loses trust for identifiable reasons, and that best practices with rigorous validation are the remedy. This reading and chapter 6 are prime Quiz 1 material (25 Jul).',
+          'Aliferis & Simon chapter 1 argues that healthcare AI/ML fails and loses trust for identifiable reasons, and that best practices with rigorous validation are the remedy. This reading and chapter 6 are prime Quiz 1 material (1 Aug).',
         points: [
           'Extract from the reading: definitions of AI, ML and data science; why healthcare AI specifically needs best practices; sources of failure and mistrust; the case for rigorous validation.',
-          'Deep-read schedule: skim before Session 1; deep-read before Quiz 1 on 25 Jul, since "relevant sections covered in the lecture notes" define the quiz scope.',
+          'Deep-read schedule: skim before Session 1; deep-read before Quiz 1 on 1 Aug, since "relevant sections covered in the lecture notes" define the quiz scope.',
           'Reading method from the prep guide: for each reading write 5 bullet takeaways plus 3 possible quiz questions in your own words.',
           'The other priority readings: ch. 6 (clinical-grade lifecycle) and Liu et al. 2025 (research vs operational IT, 3-phase LHS pipeline, OMOP/i2b2, RE-AIM).',
         ],
