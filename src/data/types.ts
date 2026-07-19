@@ -165,3 +165,39 @@ export interface ModellingPlan {
   readonly methodology: readonly string[]
   readonly donts: readonly string[]
 }
+
+// ── Proposals ───────────────────────────────────────────────────────
+export interface ProposalSection {
+  readonly heading: string
+  readonly paragraphs: readonly string[]
+  readonly bullets?: readonly string[]
+}
+
+export interface VariableRow {
+  readonly concept: string
+  readonly variable: string
+  readonly role: 'Outcome' | 'Secondary outcome' | 'Predictor' | 'Subgroup'
+  readonly original: string
+  readonly recode: string
+}
+
+export interface ProposalRole {
+  readonly role: string
+  readonly member: string
+  readonly responsibilities: string
+}
+
+export interface Proposal {
+  readonly id: string
+  readonly topic: string
+  readonly recommended: boolean
+  readonly title: string
+  readonly question: string
+  readonly eventRate: string
+  readonly rationale: readonly string[]
+  readonly learning: readonly string[]
+  readonly requirements: readonly string[]
+  readonly proposal: readonly ProposalSection[]
+  readonly variables: readonly VariableRow[]
+  readonly roles: readonly ProposalRole[]
+}

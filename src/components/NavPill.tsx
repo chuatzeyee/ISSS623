@@ -4,6 +4,7 @@ import {
   BookOpen,
   Scale,
   FlaskConical,
+  FileText,
   ClipboardCheck,
 } from 'lucide-react'
 
@@ -12,6 +13,7 @@ const navItems = [
   { to: '/topics', label: 'Topics', icon: BookOpen },
   { to: '/debate', label: 'Debate', icon: Scale },
   { to: '/project', label: 'Project', icon: FlaskConical },
+  { to: '/proposals', label: 'Proposals', icon: FileText },
   { to: '/quiz', label: 'Quiz', icon: ClipboardCheck },
 ] as const
 

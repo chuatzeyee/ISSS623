@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Topics from './pages/Topics'
 import Debate from './pages/Debate'
 import Project from './pages/Project'
+import Proposals from './pages/Proposals'
 import Quiz from './pages/Quiz'
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/topics" element={<Topics />} />
           <Route path="/debate" element={<Debate />} />
           <Route path="/project" element={<Project />} />
+          <Route path="/proposals" element={<Proposals />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
