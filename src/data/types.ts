@@ -201,3 +201,11 @@ export interface Proposal {
   readonly variables: readonly VariableRow[]
   readonly roles: readonly ProposalRole[]
 }
+
+export interface ComparisonRow {
+  readonly item: string
+  readonly requirement: string
+  readonly a: string
+  readonly b: string
+  readonly c: string
+}

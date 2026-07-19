@@ -385,3 +385,96 @@ export const proposals: readonly Proposal[] = [
     ],
   },
 ]
+
+// ── Scope-compliance comparison (brief §5 table vs each proposal) ───
+import type { ComparisonRow } from './types'
+
+export const scopeComparison: readonly ComparisonRow[] = [
+  {
+    item: 'Outcome',
+    requirement: '1 primary + 1 secondary outcome',
+    a: '✓ Primary: poor/fair general health (GENHLTH, 19.7%). Secondary: frequent physical distress (PHYSHLTH ≥14 days, 14.3%)',
+    b: '✓ Primary: frequent mental distress (MENTHLTH ≥14 days, 13.9%). Secondary: binge drinking (_RFBING6)',
+    c: '✓ Primary: no routine check-up in past year (CHECKUP1, 18.2%). Secondary: cost barrier to care (MEDCOST1, 9.5%)',
+  },
+  {
+    item: 'Predictor variables',
+    requirement: 'Maximum 20 predictors',
+    a: '✓ 19 - one slot of slack. Cut EMPLOY1 (leakage risk: code 8 = unable to work), MARITAL and _HLTHPL2 (redundancy), CHECKUP1 (it is a Topic C outcome)',
+    b: '✓ 20 - exactly at the cap (disability battery ×6 is the Cree et al. angle); any later addition forces a cut',
+    c: '✓ 19 - deliberately under cap. MEDCOST1 double-duty resolved: predictor in the primary model, target of a separate secondary run',
+  },
+  {
+    item: 'Baseline model',
+    requirement: '1 regression model',
+    a: '✓ Logistic regression with odds ratios and 95% CIs',
+    b: '✓ Logistic regression',
+    c: '✓ Logistic regression',
+  },
+  {
+    item: 'Machine-learning models',
+    requirement: 'Minimum 2 models',
+    a: '✓ Decision tree + random forest (gradient boosting optional third)',
+    b: '✓ Decision tree + random forest (gradient boosting optional annex)',
+    c: '✓ Decision tree + random forest (gradient boosting optional third)',
+  },
+  {
+    item: 'Dataset year',
+    requirement: '2024 only',
+    a: '✓ 2024 brfss2024_topic_a.csv - 457,670 respondents',
+    b: '✓ 2024 brfss2024_topic_b.csv - 457,670 respondents',
+    c: '✓ 2024 brfss2024_topic_c.csv - 457,670 respondents',
+  },
+  {
+    item: 'Survey weights',
+    requirement: 'Not used',
+    a: '✓ Not used; verbatim limitation statement included',
+    b: '✓ Not used; verbatim limitation statement included',
+    c: '✓ Not used; verbatim limitation statement included',
+  },
+  {
+    item: 'Smaller variable set',
+    requirement: 'Do not use the entire BRFSS dataset',
+    a: '✓ 21 of 297 columns (7%)',
+    b: '✓ 22 of 297 columns (7%)',
+    c: '✓ 21 of 297 columns (7%)',
+  },
+]
+
+export const strategicComparison: readonly ComparisonRow[] = [
+  {
+    item: 'Event rate balance',
+    requirement: 'Higher = easier classification',
+    a: '19.7% - best balanced',
+    b: '13.9% - most imbalanced (AUPRC emphasised)',
+    c: '18.2% - near-ideal',
+  },
+  {
+    item: 'Outcome data quality',
+    requirement: 'Lower invalid % = cleaner recode',
+    a: '0.29% invalid - cleanest single recode',
+    b: '88→0 recode needed; 77/99 ~1.8%',
+    c: '<1.2% invalid; "8 = never" kept as gap',
+  },
+  {
+    item: 'Headroom under cap',
+    requirement: 'Slack for late additions',
+    a: '1 free slot',
+    b: '0 free slots - at the cap',
+    c: '1 free slot',
+  },
+  {
+    item: 'Literature fit',
+    requirement: 'Anchor strength for the 2% criterion',
+    a: 'Strongest - near-replication of Jiang 2006 / Healthy Days',
+    b: 'Requires the marijuana→FMD pivot judgement call (Cree 2020, Miyakado-Steger 2019 support it)',
+    c: 'Good - Clark 2021 equity framing + access literature',
+  },
+  {
+    item: 'Risk level',
+    requirement: 'Lower = safer submission',
+    a: 'Lowest, but the most "predictable" choice in a curved cohort',
+    b: 'Highest - DECIDE is leakage-adjacent (sensitivity runs planned) and predictor list is at cap',
+    c: 'Low, with the most actionable outreach story - the recommended pick',
+  },
+]
