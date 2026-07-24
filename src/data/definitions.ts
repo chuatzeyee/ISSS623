@@ -1,6 +1,7 @@
 import type { Definition } from './types'
+import { l2Definitions } from './definitions_l2'
 
-export const definitions: readonly Definition[] = [
+const l1Definitions: readonly Definition[] = [
   // ── Health System ─────────────────────────────────────────────────
   {
     term: 'SingHealth',
@@ -696,3 +697,5 @@ export const definitions: readonly Definition[] = [
     related: ['List', 'Tuple'],
   },
 ] satisfies readonly Definition[]
+
+export const definitions: readonly Definition[] = [...l1Definitions, ...l2Definitions]

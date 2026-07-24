@@ -1,6 +1,7 @@
 import type { QuizQuestion } from './types'
+import { l2Questions } from './quiz_l2'
 
-export const questions: readonly QuizQuestion[] = [
+const l1Questions: readonly QuizQuestion[] = [
   // ── Healthcare Landscape ──────────────────────────────────────────
   {
     id: 'q1',
@@ -992,3 +993,5 @@ export const questions: readonly QuizQuestion[] = [
       'Tuples, strings and numbers are immutable; lists, dictionaries and DataFrames are mutable (changeable in place). The mutable/immutable split is exactly the list-vs-tuple contrast the quiz loves.',
   },
 ]
+
+export const questions: readonly QuizQuestion[] = [...l1Questions, ...l2Questions]

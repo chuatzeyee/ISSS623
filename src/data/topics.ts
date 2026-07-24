@@ -1,6 +1,7 @@
 import type { Session } from './types'
+import { l2Sessions } from './topics_l2'
 
-export const sessions: readonly Session[] = [
+const l1Sessions: readonly Session[] = [
   {
     id: 1,
     title: 'Segment 1 - Healthcare Landscape',
@@ -451,3 +452,5 @@ export const sessions: readonly Session[] = [
     ],
   },
 ]
+
+export const sessions: readonly Session[] = [...l1Sessions, ...l2Sessions]
