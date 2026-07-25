@@ -156,10 +156,10 @@ export const l2Sessions: readonly Session[] = [
           'Classifications (ICD-9, ICD-10, DRG): mono-hierarchical, stable, grouped mutually-exclusive concepts (10,000s); support SECONDARY use - statistical reporting, financing, activity-based costing, registries, epidemiology.',
           'Resource groups (DRG / AR-DRG): 100s of groups; stable and often nation-specific; support health-system management, resource management and healthcare financing.',
           'Other systems: CPT (US procedure codes, five digits, 3 categories), TOSP (Singapore Table of Surgical Procedures, ranked 1A–7C by severity), SDD (Singapore Drug Database); mapping between standards is "not an exact science" and needs clinical + contextual domain knowledge.',
-          'Data-management principles: FAIR (Findable, Accessible, Interoperable, Reusable - 2016) for scientific data, and TRUST (Transparency, Responsibility, User focus, Sustainability, Technology - 2020) for digital repositories.',
+          'Data-management principles: FAIR (Findable, Accessible, Interoperable, Reusable - 2016) for scientific data. (The TRUST-for-repositories slide was removed in the v4 deck - treat TRUST as background only.)',
         ],
         important:
-          'Match the level to its purpose: SNOMED CT = granular, direct clinical care; ICD = classification for statistics/reporting; DRG = resource groups for financing/management. Translating ICD-9 → ICD-10 can introduce artificial discontinuities.',
+          'Match the level to its purpose: SNOMED CT = granular, direct clinical care; ICD = classification for statistics/reporting; DRG = resource groups for financing/management. (The v4 deck dropped the ICD-9→ICD-10 crosswalk-challenges slide - deprioritise those details for Quiz 1.)',
         relatedTerms: ['OMOP CDM', 'OHDSI', 'SNOMED CT', 'ICD-10', 'DRG', 'TOSP', 'FAIR', 'TRUST'],
       },
       {
@@ -325,7 +325,7 @@ export const l2Sessions: readonly Session[] = [
         points: [
           'Segmentation framing (unsupervised): target = adults 18+ with ≥1 outpatient/primary-care visit; intervention/exposure = NONE required; outcomes = NOT used to build clusters (may describe/validate them later); variables for clustering = age, chronic-condition count, ED visits, admissions, medication count, no-show rate, HbA1c, eGFR, prior cost; time frame = cluster on 2025 data, examine 2026 utilisation afterward.',
           'Key design shift: in unsupervised segmentation the outcome is deliberately held OUT of the clustering and used only post-hoc to characterise or validate the segments.',
-          'Medication patterns (Barcelona, older adults with multimorbidity): cross-sectional EHR from 50 primary-care centres, multiple correspondence analysis + k-means, stratified by sex and age - found 6 medication patterns across 8 anatomical groups.',
+          'The v4 deck keeps two case studies: COVID-19 symptom clusters and Medicare high-cost patient segmentation. (The Barcelona medication-patterns study was removed in v4 - background only.)',
           'COVID-19 symptom clusters (COVID Symptom Study app, Science Advances): unsupervised clustering of symptom time series found six distinct "types" of COVID-19 (flu-like no fever, flu-like with fever, gastrointestinal, and three severity levels) - could predict need for respiratory support.',
           'High-cost patient segmentation (Medicare Advantage top-decile spenders, n=6154): compared connectivity-based (agglomerative), centroid-based (k-medoids) and density-based (OPTICS) clustering; post-hoc discriminative models identify which variables distinguish each cluster.',
           't-SNE dimension-reduction algorithm projects high-dimensional patient data into 2-D so clusters can be visualised (used both in the Medicare study and the CKD lab).',
@@ -347,7 +347,7 @@ export const l2Sessions: readonly Session[] = [
           'Course-position note: Lecture 2 sits between Lecture 1 (data-science value chain, clinical-grade AI lifecycle) and Lectures 3–4 (data analysis and modelling) - problem framing → data design → first-pass analysis.',
         ],
         important:
-          'Formative Quiz 1 is on 1 August: 20 MCQs, online via eLearn, 45 minutes, 20% weightage, covering Lectures 1–2 (and the Ch.7 & Ch.8 readings). NO coding questions.',
+          'Formative Quiz 1 is on 1 August - FORMAT UPDATED in the v4 deck: 10 MCQs (10%) + 5 short-answer questions (10%), online via eLearn, 45 minutes, covering Lectures 1-2 (and the Ch.7 & Ch.8 readings). NO coding questions. Short answers mean you must be able to EXPLAIN concepts in a sentence or two, not just recognise them.',
         relatedTerms: ['CKD clustering', 'Standard scaling', 'Elbow method', 't-SNE', 'Key takeaways', 'Quiz 1'],
       },
     ],

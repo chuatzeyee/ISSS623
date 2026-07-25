@@ -162,7 +162,7 @@ export const l2Definitions: readonly Definition[] = [
   {
     term: 'FAIR & TRUST principles',
     definition:
-      'Two stewardship frameworks the deck cites: FAIR (2016) makes data Findable, Accessible, Interoperable and Reusable; TRUST (2020) makes digital repositories Transparent, Responsible, User-focused, Sustainable and Technologically capable. Good metadata is what makes data findable, accessible and reusable.',
+      'FAIR (2016) makes data Findable, Accessible, Interoperable and Reusable - good metadata is what makes data findable, accessible and reusable. TRUST (2020, digital repositories: Transparent, Responsible, User-focused, Sustainable, Technologically capable) appeared in v3 but was dropped from the v4 deck - background only.',
     category: 'Data Ecosystem',
     related: ['Data governance & metadata management'],
   },
