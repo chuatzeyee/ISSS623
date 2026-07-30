@@ -209,3 +209,12 @@ export interface ComparisonRow {
   readonly b: string
   readonly c: string
 }
+
+// ── Short-answer drill (Quiz 1 v4 format: 5 short answers = 10%) ────
+export interface DrillCard {
+  readonly id: string
+  readonly topic: string
+  readonly prompt: string
+  readonly modelAnswer: string
+  readonly keyPoints: readonly string[]
+}
