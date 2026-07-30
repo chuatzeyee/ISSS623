@@ -12,14 +12,21 @@ function shuffled<T>(arr: readonly T[]): T[] {
   return a
 }
 
-function ShortAnswerDrill() {
-  const topics = useMemo(() => ['All', ...Array.from(new Set(drills.map(d => d.topic)))], [])
+// Class has covered all of Week 1 + Week 2 Segment 1 only.
+// Excluded until taught: 'Data Prep & Quality', 'ML & Clustering' (L2 Segments 2-3).
+const NOT_YET_COVERED = new Set(['Data Prep & Quality', 'ML & Clustering'])
+type Scope = 'covered' | 'all'
+const inScope = (topic: string, scope: Scope) => scope === 'all' || !NOT_YET_COVERED.has(topic)
+
+function ShortAnswerDrill({ scope }: { scope: Scope }) {
+  const scoped = useMemo(() => drills.filter(d => inScope(d.topic, scope)), [scope])
+  const topics = useMemo(() => ['All', ...Array.from(new Set(scoped.map(d => d.topic)))], [scoped])
   const [topic, setTopic] = useState('All')
   const [seed, setSeed] = useState(0)
   const pool = useMemo(
-    () => shuffled(drills.filter(d => topic === 'All' || d.topic === topic)),
+    () => shuffled(scoped.filter(d => topic === 'All' || d.topic === topic)),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [topic, seed],
+    [scoped, topic, seed],
   )
   const [i, setI] = useState(0)
   const [revealed, setRevealed] = useState(false)
@@ -88,13 +95,16 @@ function ShortAnswerDrill() {
 }
 
 export default function Quiz() {
-  const topics = useMemo(() => ['All', ...Array.from(new Set(questions.map(q => q.topic)))], [])
+  const [scope, setScope] = useState<Scope>('covered')
+  const scopedQuestions = useMemo(() => questions.filter(q => inScope(q.topic, scope)), [scope])
+  const scopedDrills = useMemo(() => drills.filter(d => inScope(d.topic, scope)), [scope])
+  const topics = useMemo(() => ['All', ...Array.from(new Set(scopedQuestions.map(q => q.topic)))], [scopedQuestions])
   const [topic, setTopic] = useState('All')
   const [seed, setSeed] = useState(0)
   const pool = useMemo(
-    () => shuffled(questions.filter(q => topic === 'All' || q.topic === topic)),
+    () => shuffled(scopedQuestions.filter(q => topic === 'All' || q.topic === topic)),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [topic, seed],
+    [scopedQuestions, topic, seed],
   )
   const [i, setI] = useState(0)
   const [picked, setPicked] = useState<number | null>(null)
@@ -131,22 +141,41 @@ export default function Quiz() {
         <p className="text-ink-secondary">Quiz 1 (1 Aug) is 10 MCQs + 5 short-answer questions, 45 min via eLearn, covering Lectures 1-2. Train both halves here.</p>
       </div>
 
-      <div className="flex gap-2 mb-8">
+      <div className="flex flex-wrap items-center gap-2 mb-4">
         <button
           onClick={() => setMode('mcq')}
           className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${mode === 'mcq' ? 'bg-glow-dim text-glow border border-glow/20' : 'bg-surface text-ink-muted border border-edge hover:text-ink'}`}
         >
-          <ClipboardCheck size={15} /> MCQ ({questions.length})
+          <ClipboardCheck size={15} /> MCQ ({scopedQuestions.length})
         </button>
         <button
           onClick={() => setMode('drill')}
           className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${mode === 'drill' ? 'bg-glow-dim text-glow border border-glow/20' : 'bg-surface text-ink-muted border border-edge hover:text-ink'}`}
         >
-          <PenLine size={15} /> Short Answer ({drills.length})
+          <PenLine size={15} /> Short Answer ({scopedDrills.length})
         </button>
       </div>
 
-      {mode === 'drill' ? <ShortAnswerDrill /> : (
+      <div className="flex flex-wrap items-center gap-2 mb-8">
+        <span className="text-xs text-ink-muted">Scope:</span>
+        <button
+          onClick={() => { setScope('covered'); setTopic('All'); setI(0); setPicked(null) }}
+          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${scope === 'covered' ? 'bg-s4/10 text-s4 border border-s4/25' : 'bg-surface text-ink-muted border border-edge hover:text-ink'}`}
+        >
+          Covered so far (Wk 1 + Wk 2 Seg 1)
+        </button>
+        <button
+          onClick={() => { setScope('all'); setTopic('All'); setI(0); setPicked(null) }}
+          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${scope === 'all' ? 'bg-s4/10 text-s4 border border-s4/25' : 'bg-surface text-ink-muted border border-edge hover:text-ink'}`}
+        >
+          Everything (incl. L2 Seg 2-3)
+        </button>
+        {scope === 'covered' && (
+          <span className="text-xs text-ink-faint">excludes Data Prep & Quality + ML & Clustering until taught</span>
+        )}
+      </div>
+
+      {mode === 'drill' ? <ShortAnswerDrill scope={scope} key={scope} /> : (
       <>
       <div className="flex flex-wrap items-center gap-1.5 mb-6">
         <ListFilter size={14} className="text-ink-muted mr-1" />
