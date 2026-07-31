@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react'
 import { Check, X, RotateCcw, ListFilter, ClipboardCheck, PenLine, Eye, EyeOff } from 'lucide-react'
 import { questions } from '../data/quiz'
 import { drills } from '../data/drills'
+import { codeQuestions } from '../data/quiz_code'
+import { quiz1Excluded } from '../data/quiz1_scope'
 
 function shuffled<T>(arr: readonly T[]): T[] {
   const a = [...arr]
@@ -12,14 +14,14 @@ function shuffled<T>(arr: readonly T[]): T[] {
   return a
 }
 
-// Class has covered all of Week 1 + Week 2 Segment 1 only.
-// Excluded until taught: 'Data Prep & Quality', 'ML & Clustering' (L2 Segments 2-3).
-const NOT_YET_COVERED = new Set(['Data Prep & Quality', 'ML & Clustering'])
+// Quiz 1 scope per prof's announcement: everything up to Lecture 2 SLIDE 68
+// (Charlson CI). Exclusions are per-question (quiz1_scope.ts), not per-topic,
+// because L2 Segment 2 is split mid-way by the cut-off.
 type Scope = 'covered' | 'all'
-const inScope = (topic: string, scope: Scope) => scope === 'all' || !NOT_YET_COVERED.has(topic)
+const inScope = (id: string, scope: Scope) => scope === 'all' || !quiz1Excluded.has(id)
 
 function ShortAnswerDrill({ scope }: { scope: Scope }) {
-  const scoped = useMemo(() => drills.filter(d => inScope(d.topic, scope)), [scope])
+  const scoped = useMemo(() => drills.filter(d => inScope(d.id, scope)), [scope])
   const topics = useMemo(() => ['All', ...Array.from(new Set(scoped.map(d => d.topic)))], [scoped])
   const [topic, setTopic] = useState('All')
   const [seed, setSeed] = useState(0)
@@ -94,10 +96,12 @@ function ShortAnswerDrill({ scope }: { scope: Scope }) {
   )
 }
 
+const allQuestions = [...questions, ...codeQuestions]
+
 export default function Quiz() {
   const [scope, setScope] = useState<Scope>('covered')
-  const scopedQuestions = useMemo(() => questions.filter(q => inScope(q.topic, scope)), [scope])
-  const scopedDrills = useMemo(() => drills.filter(d => inScope(d.topic, scope)), [scope])
+  const scopedQuestions = useMemo(() => allQuestions.filter(q => inScope(q.id, scope)), [scope])
+  const scopedDrills = useMemo(() => drills.filter(d => inScope(d.id, scope)), [scope])
   const topics = useMemo(() => ['All', ...Array.from(new Set(scopedQuestions.map(q => q.topic)))], [scopedQuestions])
   const [topic, setTopic] = useState('All')
   const [seed, setSeed] = useState(0)
@@ -138,7 +142,7 @@ export default function Quiz() {
     <div className="max-w-3xl mx-auto px-6 py-12">
       <div className="mb-8 animate-fade-in">
         <h1 className="text-3xl font-bold text-ink mb-2">Practice Quiz</h1>
-        <p className="text-ink-secondary">Quiz 1 (1 Aug) is 10 MCQs + 5 short-answer questions, 45 min via eLearn, covering Lectures 1-2. Train both halves here.</p>
+        <p className="text-ink-secondary">Quiz 1 is TOMORROW (1 Aug), at the start of class: Part 1 = 10 MCQs (10%), Part 2 = 5 structured/short-answer questions (10%). 45 min via eLearn - bring laptop + WiFi. Scope: up to Lecture 2 slide 68. No code-writing, but code INTERPRETATION is fair game - see the Code Interpretation topic in MCQ mode.</p>
       </div>
 
       <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -162,16 +166,16 @@ export default function Quiz() {
           onClick={() => { setScope('covered'); setTopic('All'); setI(0); setPicked(null) }}
           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${scope === 'covered' ? 'bg-s4/10 text-s4 border border-s4/25' : 'bg-surface text-ink-muted border border-edge hover:text-ink'}`}
         >
-          Covered so far (Wk 1 + Wk 2 Seg 1)
+          Quiz 1 scope (up to L2 slide 68)
         </button>
         <button
           onClick={() => { setScope('all'); setTopic('All'); setI(0); setPicked(null) }}
           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${scope === 'all' ? 'bg-s4/10 text-s4 border border-s4/25' : 'bg-surface text-ink-muted border border-edge hover:text-ink'}`}
         >
-          Everything (incl. L2 Seg 2-3)
+          Everything
         </button>
         {scope === 'covered' && (
-          <span className="text-xs text-ink-faint">excludes Data Prep & Quality + ML & Clustering until taught</span>
+          <span className="text-xs text-ink-faint">excludes missingness, outliers, CKD labs & clustering (after slide 68)</span>
         )}
       </div>
 
@@ -203,7 +207,7 @@ export default function Quiz() {
       </div>
 
       <div className="bg-surface border border-edge rounded-lg p-6 animate-fade-in" key={q.id + String(i)}>
-        <p className="text-lg text-ink leading-relaxed mb-5">{q.prompt}</p>
+        <p className={`text-lg text-ink leading-relaxed mb-5 whitespace-pre-line ${q.topic === 'Code Interpretation' ? 'font-mono text-sm bg-raised border border-edge rounded-md px-4 py-3' : ''}`}>{q.prompt}</p>
         <div className="space-y-2.5 mb-2">
           {q.options.map((opt, idx) => {
             const isPicked = picked === idx
