@@ -218,3 +218,11 @@ export interface DrillCard {
   readonly modelAnswer: string
   readonly keyPoints: readonly string[]
 }
+
+// ── Mock exam sets (10 MCQ + 5 short answers, mirrors real Quiz 1) ──
+export interface MockSet {
+  readonly id: number
+  readonly title: string
+  readonly mcqIds: readonly string[]
+  readonly drillIds: readonly string[]
+}
