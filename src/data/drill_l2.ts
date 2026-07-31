@@ -11,7 +11,7 @@ export const l2Drills: readonly DrillCard[] = [
     id: 'd101',
     topic: 'Problem Framing & Data Design',
     prompt:
-      'List the five elements of Lecture 2\'s checklist for framing an analytics problem, and explain why the framing must be done before any data is touched.',
+      'List the five elements of the checklist for framing an analytics problem, and explain why the framing must be done before any data is touched.',
     modelAnswer:
       'The five elements are (1) target population, (2) intervention/exposure, (3) outcome(s) with the primary named separately from the secondary ones, (4) predictor variables - which to include, which are confounders that must be included, and which to omit - and (5) time frame. Framing first turns a vague clinical question such as "which patients become high hospital users?" into a precise, analysable problem statement. It also forces you to decide whether the question is prediction (no assigned intervention) or causal estimation before choosing a study design. Missing any one element produces a mis-specified study, which is the most common failure in healthcare analytics.',
     keyPoints: [
@@ -25,7 +25,7 @@ export const l2Drills: readonly DrillCard[] = [
     id: 'd102',
     topic: 'Problem Framing & Data Design',
     prompt:
-      'Define primary and secondary outcomes, and illustrate the difference using the 30-day readmission example from Lecture 2.',
+      'Define primary and secondary outcomes, and illustrate the difference using the 30-day readmission example.',
     modelAnswer:
       'The primary outcome is the single main outcome of interest that the study is designed and powered to answer; all other outcomes of interest are secondary. In the readmission example the primary outcome is unplanned readmission within 30 days of discharge, while secondary outcomes include ED visit within 30 days, 90-day readmission, post-discharge cost and 30-day mortality. Naming which outcome is primary keeps the analysis focused and prevents fishing across many endpoints. Primacy is defined by the question being asked, not by which outcome occurs first, is easiest to measure, or has the most complete data.',
     keyPoints: [
@@ -236,7 +236,7 @@ export const l2Drills: readonly DrillCard[] = [
     id: 'd117',
     topic: 'Data Prep & Quality',
     prompt:
-      'Why are highly skewed variables transformed before clustering, and which transformations does Lecture 2 name?',
+      'Why are highly skewed variables transformed before clustering, and which transformations are commonly used?',
     modelAnswer:
       'A highly skewed variable stretches the distance scale so that a few large values dominate the rescaled feature and therefore the clustering. The k-means guideline is therefore to rescale ALL variables and, for highly skewed ones, to apply a log or square-root transform to reduce skew; log and Box-Cox are the transformations named in the deck (along with square root, and Generalized Estimating Equations as an advanced technique). You must also always check for outliers first, because they bias the rescaling - removing them may mean no transform is needed, otherwise a Robust Scaler helps. Rescaling itself is described as a form of "naive" feature engineering: a consistent functional transformation of a variable.',
     keyPoints: [

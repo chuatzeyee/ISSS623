@@ -774,7 +774,7 @@ const l1Questions: readonly QuizQuestion[] = [
     id: 'q62',
     topic: 'BRFSS Project',
     prompt:
-      'Per the v3 Project Guidance slide, which file is the official 2024 BRFSS dataset the class should download, and what should you expect after extraction?',
+      'Which file is the official 2024 BRFSS dataset for the group project, and what should you expect after extraction?',
     options: [
       'LLCP2024XPT.zip - extracts to a 50 MB SAS transport file',
       'brfss2024_topic_a.csv - the complete raw survey',
@@ -798,20 +798,6 @@ const l1Questions: readonly QuizQuestion[] = [
     answerIndex: 1,
     explanation:
       'Each topic CSV holds every 2024 respondent (457,670 rows) with the suggested fields for that topic (A: 29, B: 33, C: 37 columns), produced by the extraction notebook. They are unweighted and still contain 7/77, 9/99 and blank codes - your group must still recode and handle missingness, and may extract extra fields.',
-  },
-  {
-    id: 'q64',
-    topic: 'Analytics & AI',
-    prompt: 'Which statement is one of the three Key Takeaways closing the v3 Session 1 deck?',
-    options: [
-      'Healthcare data science must start with the dataset, then find a matching problem',
-      'Survey weights are essential for all healthcare analytics',
-      'Deep learning should be the default first model in healthcare',
-      'Healthcare data science must start with the healthcare problem, not the dataset',
-    ],
-    answerIndex: 3,
-    explanation:
-      'The three takeaways: start with the healthcare problem (not the dataset); learning health systems use data to continuously improve care; the data science value chain is an end-to-end process. Option A inverts the first takeaway.',
   },
   {
     id: 'q65',

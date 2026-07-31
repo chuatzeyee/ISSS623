@@ -6,7 +6,7 @@ export const l2Questions: readonly QuizQuestion[] = [
     id: 'l2q1',
     topic: 'Problem Framing & Data Design',
     prompt:
-      'Lecture 2 lists five elements for framing an analytics problem. Which of the following is NOT one of the five?',
+      'Which of the following is NOT one of the five elements for framing an analytics problem?',
     options: [
       'Target population',
       'Sample size calculation',
@@ -81,7 +81,7 @@ export const l2Questions: readonly QuizQuestion[] = [
     id: 'l2q6',
     topic: 'Problem Framing & Data Design',
     prompt:
-      'Which of the following is NOT one of the four tenets of a cohort study given in Lecture 2?',
+      'Which of the following is NOT one of the four tenets of a cohort study?',
     options: [
       'Randomization of participants to exposure groups',
       'A cohort defined by inclusion/exclusion criteria',
@@ -173,7 +173,7 @@ export const l2Questions: readonly QuizQuestion[] = [
     id: 'l2q12',
     topic: 'Data Prep & Quality',
     prompt:
-      'According to Lecture 2, roughly what share of a data science project is typically spent on the Prepare phase (asking questions, acquiring, organizing, cleaning and visualizing data)?',
+      'Roughly what share of a data science project is typically spent on the Prepare phase (asking questions, acquiring, organizing, cleaning and visualizing data)?',
     options: ['10-20%', '60-80%', '30-40%', 'Under 5%'],
     answerIndex: 1,
     explanation:
@@ -320,7 +320,7 @@ export const l2Questions: readonly QuizQuestion[] = [
     id: 'l2q23',
     topic: 'ML & Clustering',
     prompt:
-      'What is the key difference between supervised and unsupervised learning as presented in Lecture 2?',
+      'What is the key difference between supervised and unsupervised learning?',
     options: [
       'Supervised learning uses available outcome labels; unsupervised learning infers structure without labels',
       'Supervised learning is always more accurate than unsupervised learning',
@@ -392,7 +392,7 @@ export const l2Questions: readonly QuizQuestion[] = [
     id: 'l2q28',
     topic: 'ML & Clustering',
     prompt:
-      'In the StatQuest k-means video, the algorithm is re-run several times with different random starting points. How is the best clustering chosen?',
+      'The k-means algorithm is typically re-run several times with different random starting points. How is the best clustering chosen?',
     options: [
       'The run that converged in the fewest iterations wins',
       'The run whose clusters are most equal in size wins',
@@ -407,7 +407,7 @@ export const l2Questions: readonly QuizQuestion[] = [
     id: 'l2q29',
     topic: 'ML & Clustering',
     prompt:
-      'According to the StatQuest pre-class video, how does basic k-means clustering begin?',
+      'How does the basic k-means clustering algorithm begin?',
     options: [
       'By building a dendrogram of all pairwise distances',
       'By sorting the data and splitting it into K equal groups',
@@ -467,7 +467,7 @@ export const l2Questions: readonly QuizQuestion[] = [
     id: 'l2q33',
     topic: 'ML & Clustering',
     prompt:
-      'In the machine learning workflow presented in Lecture 2, what characterizes the TEST data used for model evaluation?',
+      'In a machine learning workflow, what characterizes the TEST data used for model evaluation?',
     options: [
       'It is the same data used for hyperparameter tuning',
       'It is data unseen by the model during training (out-of-sample data)',
