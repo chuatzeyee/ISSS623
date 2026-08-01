@@ -1,5 +1,6 @@
 import type { Session } from './types'
 import { l2Sessions } from './topics_l2'
+import { l34Sessions } from './topics_l34'
 
 const l1Sessions: readonly Session[] = [
   {
@@ -453,4 +454,4 @@ const l1Sessions: readonly Session[] = [
   },
 ]
 
-export const sessions: readonly Session[] = [...l1Sessions, ...l2Sessions]
+export const sessions: readonly Session[] = [...l1Sessions, ...l2Sessions, ...l34Sessions]

@@ -1,5 +1,6 @@
 import type { QuizQuestion } from './types'
 import { l2Questions } from './quiz_l2'
+import { l34Questions } from './quiz_l34'
 
 const l1Questions: readonly QuizQuestion[] = [
   // ── Healthcare Landscape ──────────────────────────────────────────
@@ -980,4 +981,4 @@ const l1Questions: readonly QuizQuestion[] = [
   },
 ]
 
-export const questions: readonly QuizQuestion[] = [...l1Questions, ...l2Questions]
+export const questions: readonly QuizQuestion[] = [...l1Questions, ...l2Questions, ...l34Questions]

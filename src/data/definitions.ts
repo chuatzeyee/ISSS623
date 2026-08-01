@@ -1,5 +1,6 @@
 import type { Definition } from './types'
 import { l2Definitions } from './definitions_l2'
+import { l34Definitions } from './definitions_l34'
 
 const l1Definitions: readonly Definition[] = [
   // ── Health System ─────────────────────────────────────────────────
@@ -698,4 +699,4 @@ const l1Definitions: readonly Definition[] = [
   },
 ] satisfies readonly Definition[]
 
-export const definitions: readonly Definition[] = [...l1Definitions, ...l2Definitions]
+export const definitions: readonly Definition[] = [...l1Definitions, ...l2Definitions, ...l34Definitions]

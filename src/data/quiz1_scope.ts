@@ -22,6 +22,14 @@ const OUT_OF_SCOPE_IDS: readonly string[] = [
   'd117', // skew transforms (taught after slide 68 in v4 ordering)
   'd119', // CKD lab flow
   'd120', 'd121', 'd122', 'd123', // ML & clustering
+  // Lecture 3-4: beyond Quiz 1 scope
+  'l3q1', 'l3q2', 'l3q3', 'l3q4', 'l3q5', 'l3q6', 'l3q7', 'l3q8', 'l3q9',
+  'l3q10', 'l3q11', 'l3q12', 'l3q13', 'l3q14', 'l3q15', 'l3q16', 'l3q17',
+  'l3q18', 'l3q19', 'l3q20',
+  'l4q1', 'l4q2', 'l4q3', 'l4q4', 'l4q5', 'l4q6', 'l4q7', 'l4q8', 'l4q9',
+  'l4q10',
+  'd201', 'd202', 'd203', 'd204', 'd205', 'd206', 'd207', 'd208', 'd209',
+  'd210', 'd211', 'd212', 'd213', 'd214', 'd215', 'd216', 'd217', 'd218',
 ]
 
 export const quiz1Excluded: ReadonlySet<string> = new Set(OUT_OF_SCOPE_IDS)

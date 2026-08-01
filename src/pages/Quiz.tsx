@@ -353,7 +353,7 @@ export default function Quiz() {
           Everything
         </button>
         {scope === 'covered' && (
-          <span className="text-xs text-ink-faint">excludes missingness, outliers, CKD labs & clustering (after slide 68)</span>
+          <span className="text-xs text-ink-faint">Quiz 1 cut-off: excludes post-slide-68 L2 content and Lectures 3-4</span>
         )}
       </div>
 
